@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 420" width="1040" height="420" role="img" aria-label="How Human KOS Works">
+  <defs>
+    <linearGradient id="cardBg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F8FAFC"/>
+      <stop offset="100%" stop-color="#F1F5F9"/>
+    </linearGradient>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#64748B"/>
+    </marker>
+  </defs>
+
+  <rect width="1040" height="420" rx="18" fill="url(#cardBg)" stroke="#CBD5E1" stroke-width="1.2"/>
+  <text x="36" y="42" fill="#0F172A" font-family="Segoe UI, Inter, system-ui, sans-serif" font-size="20" font-weight="800">How Human KOS Organizes the World</text>
+  <text x="36" y="64" fill="#475569" font-family="Segoe UI, Inter, system-ui, sans-serif" font-size="13">One portable core file for everyday use + ten optional plug-in packs whenever you need deeper specialty coverage</text>
+
+  <!-- Column 1: 5 Dimensions -->
+  <text x="36" y="102" fill="#334155" font-family="Segoe UI, Inter, system-ui, sans-serif" font-size="13" font-weight="700">1. FIVE CLEAR DIMENSIONS</text>
+  <g font-family="Segoe UI, Inter, system-ui, sans-serif">
+    <rect x="36" y="114" width="268" height="48" rx="10" fill="#FFFFFF" stroke="#38BDF8" stroke-width="1.5"/>
+    <circle cx="56" cy="138" r="6" fill="#0284C7"/>
+    <text x="72" y="134" fill="#0F172A" font-size="13" font-weight="700">Fields &amp; Disciplines</text>
+    <text x="72" y="151" fill="#64748B" font-size="11">Science, humanities, languages, society</text>
+
+    <rect x="36" y="172" width="268" height="48" rx="10" fill="#FFFFFF" stroke="#34D399" stroke-width="1.5"/>
+    <circle cx="56" cy="196" r="6" fill="#059669"/>
+    <text x="72" y="192" fill="#0F172A" font-size="13" font-weight="700">Activities &amp; Skills</text>
+    <text x="72" y="209" fill="#64748B" font-size="11">Daily life, jobs, sports, modern careers</text>
+
+    <rect x="36" y="230" width="268" height="48" rx="10" fill="#FFFFFF" stroke="#FBBF24" stroke-width="1.5"/>
+    <circle cx="56" cy="254" r="6" fill="#D97706"/>
+    <text x="72" y="250" fill="#0F172A" font-size="13" font-weight="700">Methods &amp; Processes</text>
+    <text x="72" y="267" fill="#64748B" font-size="11">Computing, AI workflows, engineering</text>
+
+    <rect x="36" y="288" width="268" height="48" rx="10" fill="#FFFFFF" stroke="#F472B6" stroke-width="1.5"/>
+    <circle cx="56" cy="312" r="6" fill="#DB2777"/>
+    <text x="72" y="308" fill="#0F172A" font-size="13" font-weight="700">Objects, Styles &amp; Eras</text>
+    <text x="72" y="325" fill="#64748B" font-size="11">Art, architecture, materials, history</text>
+
+    <rect x="36" y="346" width="268" height="48" rx="10" fill="#FFFFFF" stroke="#A78BFA" stroke-width="1.5"/>
+    <circle cx="56" cy="370" r="6" fill="#7C3AED"/>
+    <text x="72" y="366" fill="#0F172A" font-size="13" font-weight="700">Human–AI Stances</text>
+    <text x="72" y="383" fill="#64748B" font-size="11">Learning, creating, verifying, delegating</text>
+  </g>
+
+  <!-- Arrow 1 -> 2 -->
+  <line x1="312" y1="254" x2="358" y2="254" stroke="#64748B" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Column 2: Portable Atlas + Extension Packs -->
+  <text x="372" y="102" fill="#334155" font-family="Segoe UI, Inter, system-ui, sans-serif" font-size="13" font-weight="700">2. PORTABLE OFFLINE PACKAGES</text>
+
+  <rect x="372" y="114" width="300" height="148" rx="14" fill="#0F172A"/>
+  <text x="392" y="144" fill="#38BDF8" font-family="Segoe UI, Inter, system-ui, sans-serif" font-size="12" font-weight="700">CORE ATLAS · 238 MB · PERMISSIVE ONLY</text>
+  <text x="392" y="170" fill="#F8FAFC" font-family="Segoe UI, Inter, system-ui, sans-serif" font-size="18" font-weight="800">human_kos_core.sqlite</text>
+  <text x="392" y="196" fill="#CBD5E1" font-family="Segoe UI, Inter, system-ui, sans-serif" font-size="12.5">• 84,552 concepts · 266k bilingual names</text>
+  <text x="392" y="216" fill="#CBD5E1" font-family="Segoe UI, Inter, system-ui, sans-serif" font-size="12.5">• 113k relations &amp; cross-field bridges</text>
+  <text x="392" y="236" fill="#CBD5E1" font-family="Segoe UI, Inter, system-ui, sans-serif" font-size="12.5">• Built-in search, meaning vectors &amp; 2D map</text>
+
+  <rect x="372" y="276" width="300" height="118" rx="14" fill="#FFFFFF" stroke="#94A3B8" stroke-dasharray="5 4" stroke-width="1.4"/>
+  <text x="392" y="302" fill="#0F172A" font-family="Segoe UI, Inter, system-ui, sans-serif" font-size="14" font-weight="700">+ 10 Plug-in Extension Packs</text>
+  <text x="392" y="324" fill="#059669" font-family="Segoe UI, Inter, system-ui, sans-serif" font-size="12" font-weight="600">5 Permissive:</text>
+  <text x="478" y="324" fill="#475569" font-family="Segoe UI, Inter, system-ui, sans-serif" font-size="12">LCSH, Full AAT, Glottolog,</text>
+  <text x="392" y="341" fill="#475569" font-family="Segoe UI, Inter, system-ui, sans-serif" font-size="12">PeriodO, Physical Activities</text>
+  <text x="392" y="364" fill="#D97706" font-family="Segoe UI, Inter, system-ui, sans-serif" font-size="12" font-weight="600">5 ShareAlike:</text>
+  <text x="478" y="364" fill="#475569" font-family="Segoe UI, Inter, system-ui, sans-serif" font-size="12">ConceptNet, DILA, UNESCO,</text>
+  <text x="392" y="381" fill="#475569" font-family="Segoe UI, Inter, system-ui, sans-serif" font-size="12">EDAM Bio-Tools, ISCED-F</text>
+
+  <!-- Arrow 2 -> 3 -->
+  <line x1="680" y1="254" x2="726" y2="254" stroke="#64748B" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Column 3: What You Build -->
+  <text x="740" y="102" fill="#334155" font-family="Segoe UI, Inter, system-ui, sans-serif" font-size="13" font-weight="700">3. READY FOR REAL APPS</text>
+  <g font-family="Segoe UI, Inter, system-ui, sans-serif">
+    <rect x="740" y="114" width="264" height="62" rx="12" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2"/>
+    <text x="758" y="140" fill="#0F172A" font-size="13.5" font-weight="700">Connect AI Conversations</text>
+    <text x="758" y="160" fill="#475569" font-size="11.5">Link scattered chats across fields</text>
+
+    <rect x="740" y="186" width="264" height="62" rx="12" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2"/>
+    <text x="758" y="212" fill="#0F172A" font-size="13.5" font-weight="700">Personal Knowledge Maps</text>
+    <text x="758" y="232" fill="#475569" font-size="11.5">Visualize what you explore &amp; learn</text>
+
+    <rect x="740" y="258" width="264" height="62" rx="12" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2"/>
+    <text x="758" y="284" fill="#0F172A" font-size="13.5" font-weight="700">Clean Auto-Tagging</text>
+    <text x="758" y="304" fill="#475569" font-size="11.5">Organize notes, books &amp; research</text>
+
+    <rect x="740" y="330" width="264" height="64" rx="12" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2"/>
+    <text x="758" y="356" fill="#0F172A" font-size="13.5" font-weight="700">100% Local &amp; Private</text>
+    <text x="758" y="376" fill="#475569" font-size="11.5">Zero servers · zero API keys needed</text>
+  </g>
+</svg>

@@ -1,0 +1,108 @@
+{
+  "release_name": "human-kos-db2-l1",
+  "schema_version": "1.0.0",
+  "built_at_utc": "2026-11-22T06:09:35Z",
+  "embedding_model": "intfloat/multilingual-e5-small",
+  "embedding_version": "e5-small-int8-v1",
+  "embedding_dim": 384,
+  "embedding_quant": "int8",
+  "layout_version": "umap-n15-d01-cos-s42-v1",
+  "umap_params": {
+    "n_neighbors": 15,
+    "min_dist": 0.1,
+    "metric": "cosine",
+    "random_state": 42
+  },
+  "gate_policies": {
+    "G-01": "A_revised",
+    "G-02": "A",
+    "G-03": "A",
+    "G-04": "A"
+  },
+  "files": [
+    {
+      "path": "human_kos_core.sqlite",
+      "size_bytes": 249077760,
+      "size_mb": 237.54,
+      "sha256": "cc8e9ccf860db45ed45c720b488bb19485b1899b4c27fcbcc99977fdf63b1029"
+    },
+    {
+      "path": "human_kos_ext/edam.sqlite",
+      "size_bytes": 5595136,
+      "size_mb": 5.34,
+      "sha256": "f3b2c6824f4d32f445977b45de43c8c6fb023986b0bcb343661c0ce73e29ba7b"
+    },
+    {
+      "path": "human_kos_ext/compendium.sqlite",
+      "size_bytes": 2400256,
+      "size_mb": 2.29,
+      "sha256": "fbf5e304ee562e75e0a25526c1e9ce77d9da5363d85fa3ad768b9a2232be99b5"
+    },
+    {
+      "path": "human_kos_ext/iscedf.sqlite",
+      "size_bytes": 753664,
+      "size_mb": 0.72,
+      "sha256": "78a8c62ebd2c31badefcea273916e1d8b4944514630bd4d26530048dcabb3410"
+    },
+    {
+      "path": "human_kos_ext/unesco.sqlite",
+      "size_bytes": 9355264,
+      "size_mb": 8.92,
+      "sha256": "44c49dc01f495761e836a8021552d5d2cc96e771fda54bb9651a75f37c89c31c"
+    },
+    {
+      "path": "human_kos_ext/glottolog.sqlite",
+      "size_bytes": 16482304,
+      "size_mb": 15.72,
+      "sha256": "cd698742b5890d03799c9ece68674d6e4e85cfa3fb97e97311db89c53a231b28"
+    },
+    {
+      "path": "human_kos_ext/periodo.sqlite",
+      "size_bytes": 12492800,
+      "size_mb": 11.91,
+      "sha256": "d6ef28c02d1c8ad1dab69f9d9437d1d766abb032a58f0e50955a3c4948b1c503"
+    },
+    {
+      "path": "human_kos_ext/aat.sqlite",
+      "size_bytes": 121880576,
+      "size_mb": 116.23,
+      "sha256": "cc5f029b7c1d8c33e5f516250931215794f261ca110321e7f8cefe85af1f256e"
+    },
+    {
+      "path": "human_kos_ext/lcsh.sqlite",
+      "size_bytes": 351289344,
+      "size_mb": 335.02,
+      "sha256": "c44ecde1d384931e9ece4843d74caa88d2947490586329ae0212e5afa72a547a"
+    },
+    {
+      "path": "human_kos_ext/dila.sqlite",
+      "size_bytes": 176635904,
+      "size_mb": 168.45,
+      "sha256": "fde2e53f7fe82b2959d2b7e72ab8728b4d9b94e4d0fe2b0ce179a2f3862f1627"
+    },
+    {
+      "path": "human_kos_ext/cn_rel.sqlite",
+      "size_bytes": 122376192,
+      "size_mb": 116.71,
+      "sha256": "5a41741f2121fc0c857d16237459ffdc1e79bdf65579ead01dd40df568464f8e"
+    },
+    {
+      "path": "SCHEMA.md",
+      "size_bytes": 4992,
+      "size_mb": 0.0,
+      "sha256": "341ff1b3ace7dd80ebe90623fadab612fdc0fff87a070de3fd26cc4640e93155"
+    },
+    {
+      "path": "QUERIES.md",
+      "size_bytes": 3624,
+      "size_mb": 0.0,
+      "sha256": "1a01d454814c6a6e8ddfb3b273a1ce27765fcdbdf85157e240fb26388ec7c01c"
+    },
+    {
+      "path": "NOTICE",
+      "size_bytes": 6312,
+      "size_mb": 0.01,
+      "sha256": "fbdfce0a7f24b031bb6a26e499cda600b63c6f15bfc3bbb5260cc81010a759e0"
+    }
+  ]
+}

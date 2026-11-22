@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 420" width="1040" height="420" role="img" aria-label="Human KOS 运作全景图">
+  <defs>
+    <linearGradient id="cardBgZh" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F8FAFC"/>
+      <stop offset="100%" stop-color="#F1F5F9"/>
+    </linearGradient>
+    <marker id="arrowZh" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#64748B"/>
+    </marker>
+  </defs>
+
+  <rect width="1040" height="420" rx="18" fill="url(#cardBgZh)" stroke="#CBD5E1" stroke-width="1.2"/>
+  <text x="36" y="42" fill="#0F172A" font-family="Microsoft YaHei, PingFang SC, Segoe UI, sans-serif" font-size="20" font-weight="700">Human KOS 如何组织人类知识版图</text>
+  <text x="36" y="64" fill="#475569" font-family="Microsoft YaHei, PingFang SC, Segoe UI, sans-serif" font-size="13">一个随身核心文件覆盖日常跨领域检索 + 十个可选扩展包按需挂载，开箱即用、完全离线</text>
+
+  <!-- Column 1: 5 Dimensions -->
+  <text x="36" y="102" fill="#334155" font-family="Microsoft YaHei, PingFang SC, Segoe UI, sans-serif" font-size="13" font-weight="700">1. 五大清晰维度</text>
+  <g font-family="Microsoft YaHei, PingFang SC, Segoe UI, sans-serif">
+    <rect x="36" y="114" width="268" height="48" rx="10" fill="#FFFFFF" stroke="#38BDF8" stroke-width="1.5"/>
+    <circle cx="56" cy="138" r="6" fill="#0284C7"/>
+    <text x="72" y="134" fill="#0F172A" font-size="13.5" font-weight="700">学科与知识领域</text>
+    <text x="72" y="152" fill="#64748B" font-size="11.5">科学、人文、社会与世界语言谱系</text>
+
+    <rect x="36" y="172" width="268" height="48" rx="10" fill="#FFFFFF" stroke="#34D399" stroke-width="1.5"/>
+    <circle cx="56" cy="196" r="6" fill="#059669"/>
+    <text x="72" y="192" fill="#0F172A" font-size="13.5" font-weight="700">人类活动与技能</text>
+    <text x="72" y="210" fill="#64748B" font-size="11.5">日常生活、职业技能、运动与新兴岗位</text>
+
+    <rect x="36" y="230" width="268" height="48" rx="10" fill="#FFFFFF" stroke="#FBBF24" stroke-width="1.5"/>
+    <circle cx="56" cy="254" r="6" fill="#D97706"/>
+    <text x="72" y="250" fill="#0F172A" font-size="13.5" font-weight="700">方法与技术流程</text>
+    <text x="72" y="268" fill="#64748B" font-size="11.5">计算机体系、前沿 AI 方法与工程实践</text>
+
+    <rect x="36" y="288" width="268" height="48" rx="10" fill="#FFFFFF" stroke="#F472B6" stroke-width="1.5"/>
+    <circle cx="56" cy="312" r="6" fill="#DB2777"/>
+    <text x="72" y="308" fill="#0F172A" font-size="13.5" font-weight="700">器物、风格与历史时期</text>
+    <text x="72" y="326" fill="#64748B" font-size="11.5">艺术建筑、材料器物与全球历史断代</text>
+
+    <rect x="36" y="346" width="268" height="48" rx="10" fill="#FFFFFF" stroke="#A78BFA" stroke-width="1.5"/>
+    <circle cx="56" cy="370" r="6" fill="#7C3AED"/>
+    <text x="72" y="366" fill="#0F172A" font-size="13.5" font-weight="700">人机协作姿态</text>
+    <text x="72" y="384" fill="#64748B" font-size="11.5">学习探索、协同创作、校验与委派模式</text>
+  </g>
+
+  <!-- Arrow 1 -> 2 -->
+  <line x1="312" y1="254" x2="358" y2="254" stroke="#64748B" stroke-width="2" marker-end="url(#arrowZh)"/>
+
+  <!-- Column 2: Portable Packages -->
+  <text x="372" y="102" fill="#334155" font-family="Microsoft YaHei, PingFang SC, Segoe UI, sans-serif" font-size="13" font-weight="700">2. 许可清晰的分层数据包</text>
+
+  <rect x="372" y="114" width="300" height="148" rx="14" fill="#0F172A"/>
+  <text x="392" y="144" fill="#38BDF8" font-family="Microsoft YaHei, PingFang SC, Segoe UI, sans-serif" font-size="12" font-weight="700">核心图谱 · 238 MB · 纯宽松许可</text>
+  <text x="392" y="170" fill="#F8FAFC" font-family="Segoe UI, Inter, sans-serif" font-size="18" font-weight="800">human_kos_core.sqlite</text>
+  <text x="392" y="196" fill="#CBD5E1" font-family="Microsoft YaHei, PingFang SC, Segoe UI, sans-serif" font-size="12.5">• 84,552 个核心概念 · 26.6 万中英别名</text>
+  <text x="392" y="216" fill="#CBD5E1" font-family="Microsoft YaHei, PingFang SC, Segoe UI, sans-serif" font-size="12.5">• 11.3 万条层级与跨学科关联桥</text>
+  <text x="392" y="236" fill="#CBD5E1" font-family="Microsoft YaHei, PingFang SC, Segoe UI, sans-serif" font-size="12.5">• 内置中英检索、语义向量与 2D 坐标地图</text>
+
+  <rect x="372" y="276" width="300" height="118" rx="14" fill="#FFFFFF" stroke="#94A3B8" stroke-dasharray="5 4" stroke-width="1.4"/>
+  <text x="392" y="302" fill="#0F172A" font-family="Microsoft YaHei, PingFang SC, Segoe UI, sans-serif" font-size="14" font-weight="700">+ 10 个按需挂载扩展包</text>
+  <text x="392" y="325" fill="#059669" font-family="Microsoft YaHei, PingFang SC, Segoe UI, sans-serif" font-size="12" font-weight="700">5 个宽松许可：</text>
+  <text x="486" y="325" fill="#475569" font-family="Microsoft YaHei, PingFang SC, Segoe UI, sans-serif" font-size="12">美国国会主题词、全量艺术词表、</text>
+  <text x="392" y="343" fill="#475569" font-family="Microsoft YaHei, PingFang SC, Segoe UI, sans-serif" font-size="12">世界语言、历史分期、体能活动词典</text>
+  <text x="392" y="366" fill="#D97706" font-family="Microsoft YaHei, PingFang SC, Segoe UI, sans-serif" font-size="12" font-weight="700">5 个相同方式共享：</text>
+  <text x="510" y="366" fill="#475569" font-family="Microsoft YaHei, PingFang SC, Segoe UI, sans-serif" font-size="12">常识关系、佛学人地时、</text>
+  <text x="392" y="384" fill="#475569" font-family="Microsoft YaHei, PingFang SC, Segoe UI, sans-serif" font-size="12">联合国词表、生物计算、教育分类</text>
+
+  <!-- Arrow 2 -> 3 -->
+  <line x1="680" y1="254" x2="726" y2="254" stroke="#64748B" stroke-width="2" marker-end="url(#arrowZh)"/>
+
+  <!-- Column 3: Scenarios -->
+  <text x="740" y="102" fill="#334155" font-family="Microsoft YaHei, PingFang SC, Segoe UI, sans-serif" font-size="13" font-weight="700">3. 面向真实场景</text>
+  <g font-family="Microsoft YaHei, PingFang SC, Segoe UI, sans-serif">
+    <rect x="740" y="114" width="264" height="62" rx="12" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2"/>
+    <text x="758" y="140" fill="#0F172A" font-size="13.5" font-weight="700">串联零散的 AI 对话</text>
+    <text x="758" y="160" fill="#475569" font-size="11.5">把跨学科的灵感与问答自然连成网络</text>
+
+    <rect x="740" y="186" width="264" height="62" rx="12" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2"/>
+    <text x="758" y="212" fill="#0F172A" font-size="13.5" font-weight="700">绘制个人知识地图</text>
+    <text x="758" y="232" fill="#475569" font-size="11.5">直观看见自己探索过哪些领域与盲区</text>
+
+    <rect x="740" y="258" width="264" height="62" rx="12" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2"/>
+    <text x="758" y="284" fill="#0F172A" font-size="13.5" font-weight="700">无痛自动归类与打标</text>
+    <text x="758" y="304" fill="#475569" font-size="11.5">为笔记、书籍与文献提供标准双语目录</text>
+
+    <rect x="740" y="330" width="264" height="64" rx="12" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.2"/>
+    <text x="758" y="356" fill="#0F172A" font-size="13.5" font-weight="700">100% 本地离线私密</text>
+    <text x="758" y="376" fill="#475569" font-size="11.5">无需云端账号，不依赖任何第三方服务</text>
+  </g>
+</svg>

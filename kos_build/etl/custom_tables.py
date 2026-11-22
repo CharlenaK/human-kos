@@ -1,0 +1,327 @@
+"""G-03 Custom self-built mini-tables for L1 KOS Database II:
+1. ACM AI Contemporary Supplement (~150 nodes attached to ACM CCS 2012 AI/ML/NLP/Security)
+2. Facet V 10 Nodes (AEI 5 collaboration buckets + 5 cognitive stances)
+3. 2024/2025 New Occupations (36 bilingual nodes in Facet II)
+"""
+
+from __future__ import annotations
+
+from typing import List, Tuple
+
+# ----------------------------------------------------------------------------
+# 1. Facet V: 10 Stance / Interaction Mode Nodes (AEI 5 + Cognitive Stance 5)
+# ----------------------------------------------------------------------------
+# Tuple: (node_id, source_id, parent_id, is_root, depth, en, zh, breadcrumb, definition, aliases_zh, aliases_en)
+FACET_V_NODES: List[Tuple] = [
+    (
+        "stance:ROOT_INTERACTION", "AEI", None, 1, 0,
+        "Human-AI Interaction Modes (AEI)", "人机交互模式（AEI）",
+        "Human-AI Interaction Modes (AEI)",
+        "Five collaboration interaction modes derived from Anthropic Economic Index metric_id collaboration buckets (excluding none).",
+        ["人机协作模式", "交互模式", "协作桶"], ["interaction mode", "collaboration mode", "AEI collaboration"],
+    ),
+    (
+        "aei:directive", "AEI", "stance:ROOT_INTERACTION", 0, 1,
+        "Directive", "指令委派",
+        "Human-AI Interaction Modes (AEI) > Directive",
+        "User delegates a well-specified task directly for completion with minimal back-and-forth iteration.",
+        ["直接指令", "任务委派", "单轮交付"], ["directive", "delegation", "one-shot instruction"],
+    ),
+    (
+        "aei:feedback_loop", "AEI", "stance:ROOT_INTERACTION", 0, 1,
+        "Feedback Loop", "反馈循环",
+        "Human-AI Interaction Modes (AEI) > Feedback Loop",
+        "Automated or environmental feedback (errors, test outputs, logs) is repeatedly fed back to guide iterative repair.",
+        ["闭环反馈", "错误驱动迭代", "环境反馈"], ["feedback loop", "error-driven loop", "closed-loop"],
+    ),
+    (
+        "aei:task_iteration", "AEI", "stance:ROOT_INTERACTION", 0, 1,
+        "Task Iteration", "任务迭代",
+        "Human-AI Interaction Modes (AEI) > Task Iteration",
+        "User and AI collaboratively refine a deliverable across multiple conversational turns with evolving constraints.",
+        ["多轮迭代", "协同打磨", "渐进细化"], ["task iteration", "iterative refinement", "co-editing"],
+    ),
+    (
+        "aei:learning", "AEI", "stance:ROOT_INTERACTION", 0, 1,
+        "Learning", "学习探索",
+        "Human-AI Interaction Modes (AEI) > Learning",
+        "User seeks conceptual explanation, tutoring, mental-model building, or domain comprehension rather than direct output.",
+        ["概念学习", "知识探索", "教学辅导", "入门理解"], ["learning", "tutoring", "conceptual explanation"],
+    ),
+    (
+        "aei:validation", "AEI", "stance:ROOT_INTERACTION", 0, 1,
+        "Validation", "验证校验",
+        "Human-AI Interaction Modes (AEI) > Validation",
+        "User asks AI to verify, audit, critique, fact-check, or review user-authored work or hypotheses.",
+        ["核验审查", "质量校验", "复核评审", "事实核查"], ["validation", "verification", "review", "audit"],
+    ),
+    (
+        "stance:ROOT_COGNITIVE", "CUSTOM_SELF", None, 1, 0,
+        "Cognitive Stances", "认知姿态",
+        "Cognitive Stances",
+        "Five human cognitive stances not covered by task-oriented collaboration taxonomies.",
+        ["认知模式", "思维姿态", "探究姿态"], ["cognitive stance", "epistemic stance", "inquiry mode"],
+    ),
+    (
+        "stance:roleplay", "CUSTOM_SELF", "stance:ROOT_COGNITIVE", 0, 1,
+        "Roleplay & Scenario Simulation", "角色扮演与情境推演",
+        "Cognitive Stances > Roleplay & Scenario Simulation",
+        "Adopting a persona, historical perspective, or fictional world frame to explore situated reasoning or creative narrative.",
+        ["角色扮演", "情境模拟", "设定推演", "RP", "架空推演"], ["roleplay", "RP", "persona simulation", "worldbuilding"],
+    ),
+    (
+        "stance:thought_experiment", "CUSTOM_SELF", "stance:ROOT_COGNITIVE", 0, 1,
+        "Thought Experiment & Counterfactual Inquiry", "思想实验与反事实推演",
+        "Cognitive Stances > Thought Experiment & Counterfactual Inquiry",
+        "Constructing idealized or counterfactual scenarios to test conceptual boundaries, ethical intuitions, or theoretical consequences.",
+        ["思想实验", "反事实推演", "边界条件推演", "假想实验"], ["thought experiment", "counterfactual", "hypothetical reasoning"],
+    ),
+    (
+        "stance:dialectic_falsification", "CUSTOM_SELF", "stance:ROOT_COGNITIVE", 0, 1,
+        "Dialectic Debate & Falsification", "辩论与证伪批判",
+        "Cognitive Stances > Dialectic Debate & Falsification",
+        "Adversarial steelmanning, thesis-antithesis confrontation, and active attempts to falsify assumptions or arguments.",
+        ["辩论", "证伪", "红队批判", "反方质疑", "钢人论证"], ["debate", "falsification", "dialectic", "steelman", "red-teaming"],
+    ),
+    (
+        "stance:philological_inquiry", "CUSTOM_SELF", "stance:ROOT_COGNITIVE", 0, 1,
+        "Philological & Textual Inquiry", "考据与文献溯源",
+        "Cognitive Stances > Philological & Textual Inquiry",
+        "Close reading, primary-source verification, etymological tracing, and cross-edition comparison of texts or traditions.",
+        ["考据", "文献溯源", "版本校勘", "文本细读", "训诂"], ["philology", "textual criticism", "primary source verification", "exegesis"],
+    ),
+    (
+        "stance:engineering_troubleshooting", "CUSTOM_SELF", "stance:ROOT_COGNITIVE", 0, 1,
+        "Engineering Troubleshooting & Root-Cause Diagnosis", "工程排障与根因定位",
+        "Cognitive Stances > Engineering Troubleshooting & Root-Cause Diagnosis",
+        "Hypothesis-driven fault isolation, log/trace inspection, minimal reproduction, and systematic root-cause elimination.",
+        ["工程排障", "根因定位", "故障排查", "调试诊断", "复现定位"], ["troubleshooting", "root-cause analysis", "debugging", "incident diagnosis"],
+    ),
+]
+
+
+# ----------------------------------------------------------------------------
+# 2. 2024/2025 New Occupations (36 bilingual nodes in Facet II ACTIVITY)
+# ----------------------------------------------------------------------------
+# Tuple: (code_suffix, zh_label, en_label, definition, aliases_zh)
+NEW_OCCUPATIONS_2024_2025: List[Tuple[str, str, str, str, List[str]]] = [
+    ("01", "生成式人工智能系统应用员", "Generative AI System Application Specialist", "运用生成式人工智能技术与工具进行业务场景设计、提示工程、工作流编排与系统落地的人员。", ["生成式AI应用员", "AIGC应用工程师", "提示词工程师"]),
+    ("02", "人工智能训练师", "AI Data & Model Trainer", "负责大模型及机器学习系统的语料构建、指令微调、偏好标注与评测调优的人员。", ["AI训练师", "大模型标注与微调师"]),
+    ("03", "智能体工程运维师", "AI Agent Systems Engineer", "设计、编排、监控并维护自主智能体工作流、工具调用边界与评测回归的工程人员。", ["Agent工程师", "智能体开发运维"]),
+    ("04", "生物工程技术人员", "Bioengineering Technician", "从事合成生物学、生物制造工艺放大与生物过程控制的技术人员。", ["合成生物工程师", "生物制造工程师"]),
+    ("05", "智能网联汽车测试员", "Intelligent Connected Vehicle Tester", "对自动驾驶与车联网系统进行仿真、封闭场地与公开道路安全验证的测试人员。", ["自动驾驶测试员", "智驾测试工程师"]),
+    ("06", "智能制造系统运维员", "Smart Manufacturing Systems Operator", "维护数字化产线、工业机器人、MES与PLC联动系统的运维人员。", ["智能产线运维", "工业自动化运维"]),
+    ("07", "工业互联网运维员", "Industrial Internet Operations Specialist", "负责工业标识解析、边缘网关、工业云平台安全与稳定运行的技术人员。", ["工业互联网工程师", "IIoT运维"]),
+    ("08", "云网智能运维员", "Cloud-Network AIOps Specialist", "融合云原生基础设施监控、网络自动化与AIOps实现故障自愈的运维人员。", ["云网运维", "AIOps工程师", "SRE"]),
+    ("09", "区块链应用操作员", "Blockchain Application Operator", "部署与维护分布式账本节点、智能合约及链上存证应用的技术人员。", ["区块链运维", "Web3合约运维"]),
+    ("10", "全媒体运营师", "Omnimedia Operations Specialist", "统筹图文、短视频、直播与社群多平台内容策划与增长分析的运营人员。", ["新媒体运营", "内容增长运营"]),
+    ("11", "网络主播", "Livestream Host & Content Creator", "在互联网平台通过实时音视频互动开展知识分享、娱乐或电商直播的人员。", ["直播主播", "知识主播"]),
+    ("12", "跨境电商运营管理师", "Cross-Border E-Commerce Operations Manager", "负责海外电商店铺运营、跨境供应链、合规税务与本地化营销的管理人员。", ["跨境运营", "出海电商运营"]),
+    ("13", "用户增长运营师", "User Growth Operations Specialist", "通过数据漏斗分析、A/B实验与生命周期触达提升产品获客与留存的运营人员。", ["增长黑客", "用户增长"]),
+    ("14", "检验检测管理工程技术人员", "Inspection and Testing Management Engineer", "负责实验室质量体系、标准符合性检测与计量溯源管理的工程技术人员。", ["质检测试工程师", "实验室认可管理"]),
+    ("15", "储能电站运维管理员", "Energy Storage Power Station Operator", "负责电化学或机械储能电站BMS/EMS监控、热管理安全与电力调度的运维人员。", ["储能运维", "新能源储能管理员"]),
+    ("16", "电能质量管理员", "Power Quality Management Specialist", "监测并治理电网谐波、电压暂降与三相不平衡等电能质量问题的技术人员。", ["电力质量工程师", "配网质量治理"]),
+    ("17", "版权经纪人", "Copyright & IP Broker", "从事数字内容、软件、文创及出版物版权评估、授权谈判与维权代理的人员。", ["知识产权经纪", "IP授权经理"]),
+    ("18", "滑雪巡救员", "Ski Patrol & Mountain Rescue Specialist", "负责雪道安全巡查、雪崩风险监测及滑雪场院前急救与转运的专业人员。", ["雪场救援员", "山地巡救"]),
+    ("19", "无人机群飞行规划员", "Drone Swarm Flight Planner", "设计多机协同航迹、空域避障与低空编队表演或巡检任务的规划人员。", ["低空飞控规划", "无人机编队工程师"]),
+    ("20", "电子电路设计师", "Electronic Circuit Design Engineer", "从事模拟/数字电路原理图、高速PCB布局布线与EMC合规设计的工程师。", ["硬件电路设计师", "PCB设计工程师"]),
+    ("21", "智慧仓运维员", "Smart Warehouse Systems Operator", "运维AGV/AMR搬运机器人、立体库WMS/WCS调度系统的技术人员。", ["智能仓储运维", "物流机器人运维"]),
+    ("22", "养老服务师", "Elderly Care Service Specialist", "综合评估老年人身心功能并制定照护计划、康复辅助与适老化改造方案的人员。", ["康养服务师", "适老照护规划师"]),
+    ("23", "睡眠健康管理师", "Sleep Health Management Specialist", "运用睡眠监测数据与行为干预方法改善个体睡眠障碍与昼夜节律的人员。", ["睡眠管理师", "睡眠健康顾问"]),
+    ("24", "旅拍定制师", "Travel Photography Customization Specialist", "结合目的地文化地理策划个性化旅行影像拍摄与后期制作的人员。", ["旅行摄影策划", "定制旅拍师"]),
+    ("25", "文创产品策划运营师", "Cultural & Creative Product Manager", "挖掘博物馆与非遗文化元素开展文创衍生品设计、供应链打样与渠道运营的人员。", ["文创策划", "博物馆文创运营"]),
+    ("26", "口腔卫生技师", "Dental Hygienist", "开展口腔预防保健、洁治宣教及辅助临床牙周维护的专业技术人员。", ["口腔保健技师", "洁牙师"]),
+    ("27", "家政服务经理人", "Domestic Services Manager", "统筹家庭服务需求评估、服务人员培训调度与服务质量督导的管理人员。", ["高端家政管理", "家庭服务统筹"]),
+    ("28", "农村集体经济经理人", "Rural Collective Economy Manager", "负责乡村集体资产盘活、特色产业经营与农文旅项目财务治理的职业经理人。", ["乡村CEO", "集体经济运营"]),
+    ("29", "装修管家", "Home Renovation Project Concierge", "代表业主监督室内装饰施工节点、材料验收、预算控制与售后交付的人员。", ["家装监理管家", "装修项目经理"]),
+    ("30", "碳排放管理员", "Carbon Emissions Management Specialist", "开展组织与产品碳足迹核算、碳核查报告编制及碳资产交易管理的人员。", ["双碳管理员", "ESG碳核算师"]),
+    ("31", "氢基直接还原铁炼铁工", "Hydrogen-Based Direct Reduced Iron Operator", "操作绿氢冶金竖炉实现低碳直接还原炼铁工艺的工业技术人员。", ["氢冶金操作工", "低碳炼铁技师"]),
+    ("32", "服务犬驯养师", "Service Dog Trainer", "训练导盲犬、辅助治疗犬与搜救犬行为服从及人犬协作技能的专业人员。", ["导盲犬训导师", "工作犬训练师"]),
+    ("33", "咖啡加工工", "Coffee Processing & Roasting Specialist", "从事咖啡生豆处理、烘焙曲线控制、杯测风味品控的加工技术人员。", ["咖啡烘焙师", "精品咖啡品控"]),
+    ("34", "烧烤料理师", "Barbecue & Grill Culinary Specialist", "掌握食材腌制、炭火温控与风味调配的烧烤烹饪专业人员。", ["炭火料理师", "烧烤主厨"]),
+    ("35", "工业视觉系统运维员", "Industrial Machine Vision Operator", "调试与维护工业相机、光源、缺陷检测算法与产线分拣联动的视觉工程师。", ["机器视觉运维", "AOI视觉工程师"]),
+    ("36", "数字化解决方案设计师", "Digital Transformation Solution Architect", "面向企业业务流程设计云架构、数据中台与AI赋能整体方案的架构师。", ["解决方案架构师", "数字化架构师"]),
+]
+
+
+# ----------------------------------------------------------------------------
+# 3. ACM CCS 2012 Contemporary AI / LLM / Systems Supplement (~150 nodes)
+#    Each entry maps cleanly onto an existing ACM CCS 2012 parent group:
+#      'AI'  -> Artificial intelligence (10010178)
+#      'ML'  -> Machine learning (10010257)
+#      'NLP' -> Natural language processing (10010179)
+#      'CV'  -> Computer vision (10010248)
+#      'IR'  -> Information retrieval (10002951.10003317 -> fallback 10003317)
+#      'SEC' -> Security and privacy (10002978)
+#      'SE'  -> Software and its engineering (10011007)
+#      'SYS' -> Computer systems organization / Distributed computing (10010520)
+# ----------------------------------------------------------------------------
+# Tuple: (slug, parent_group, en_label, zh_label, definition, aliases)
+ACM_AI_SUPPLEMENT: List[Tuple[str, str, str, str, str, List[str]]] = [
+    # --- Foundation Models & Architectures (25) ---
+    ("llm", "AI", "Large Language Models", "大语言模型", "Autoregressive or encoder-decoder neural language models trained on web-scale corpora exhibiting emergent in-context capabilities.", ["LLM", "大模型", "大型语言模型"]),
+    ("transformer", "ML", "Transformer Architecture", "Transformer 架构", "Sequence modeling architecture built on multi-head self-attention and feed-forward blocks without recurrence.", ["注意力网络", "自注意力架构"]),
+    ("self_attention", "ML", "Self-Attention Mechanism", "自注意力机制", "Scaled dot-product mechanism computing pairwise token interactions across a sequence.", ["注意力机制", "多头注意力", "MHA"]),
+    ("gqa_mqa", "ML", "Grouped-Query & Multi-Query Attention", "分组查询注意力", "KV-cache efficient attention variants sharing key-value heads across query head groups.", ["GQA", "MQA", "MLA", "多头潜在注意力"]),
+    ("flash_attention", "SYS", "IO-Aware Exact Attention (FlashAttention)", "FlashAttention 高效注意力", "Hardware-aware tiled attention kernel minimizing HBM reads/writes during training and inference.", ["FlashAttention", "显存感知注意力"]),
+    ("rope", "ML", "Rotary Position Embedding (RoPE)", "旋转位置编码", "Relative positional encoding applying block-diagonal rotation matrices to query and key vectors.", ["RoPE", "位置编码", "YaRN"]),
+    ("moe", "ML", "Mixture of Experts (MoE)", "混合专家模型", "Sparse conditional computation routing tokens to a subset of specialized expert sub-networks.", ["MoE", "稀疏专家", "路由网络"]),
+    ("ssm_mamba", "ML", "State Space Models & Mamba", "状态空间模型与 Mamba", "Linear-time sequence models using selective structured state transitions as Transformer alternatives.", ["Mamba", "SSM", "线性注意力"]),
+    ("scaling_laws", "ML", "Neural Scaling Laws", "神经缩放定律", "Empirical power-law relationships between loss, parameter count, dataset tokens, and compute budget.", ["Scaling Law", "Chinchilla 定律", "缩放律"]),
+    ("long_context", "NLP", "Long-Context Modeling", "长上下文建模", "Techniques enabling language models to process hundreds of thousands to millions of tokens coherently.", ["长文本", "上下文窗口", "Context Window"]),
+    ("kv_cache", "SYS", "KV Cache Management & Compression", "KV 缓存管理与压缩", "Key-value tensor caching, paging (PagedAttention), quantization, and eviction during autoregressive decoding.", ["KV Cache", "PagedAttention", "前缀缓存"]),
+    ("tokenizer_bpe", "NLP", "Subword Tokenization (BPE / SentencePiece)", "子词分词与词表设计", "Byte-pair encoding and unigram subword algorithms mapping raw Unicode text to model token IDs.", ["BPE", "Tokenizer", "词元化", "分词器"]),
+    ("multimodal_llm", "AI", "Multimodal Large Language Models", "多模态大模型", "Unified foundation models jointly processing text, images, audio, and video inputs and outputs.", ["MLLM", "VLM", "视觉语言模型", "多模态"]),
+    ("diffusion_models", "ML", "Diffusion & Flow Matching Models", "扩散模型与流匹配", "Iterative denoising and continuous normalizing flow generative models for images, video, and audio.", ["扩散模型", "DiT", "Flow Matching", "Stable Diffusion"]),
+    ("world_models", "AI", "World Models & Predictive Video Simulation", "世界模型", "Internal predictive models simulating environment dynamics for planning and embodied control.", ["World Model", "环境模拟模型"]),
+    ("vla", "AI", "Vision-Language-Action Models", "视觉语言动作模型", "End-to-end embodied AI models mapping visual observations and language instructions to robot actions.", ["VLA", "具身智能", "Embodied AI"]),
+    ("slm", "ML", "Small Language Models & Edge AI", "小语言模型与端侧部署", "Compact foundation models (<10B parameters) optimized for on-device latency and privacy.", ["SLM", "端侧大模型", "小模型"]),
+    ("embedding_models", "IR", "Dense Text Embedding Models", "稠密文本向量模型", "Bi-encoder neural models projecting text into semantic vector spaces for retrieval and clustering.", ["Embedding", "向量嵌入", "语义向量"]),
+    ("reranker", "IR", "Cross-Encoder & Neural Reranking", "神经重排序模型", "Second-stage scoring models jointly attending to query and candidate passage to refine top-K recall.", ["Rerank", "重排", "交叉编码器"]),
+    ("late_interaction", "IR", "Late Interaction Retrieval (ColBERT)", "延迟交互检索", "Token-level MaxSim retrieval balancing bi-encoder efficiency with fine-grained term matching.", ["ColBERT", "多向量检索"]),
+    ("hybrid_search", "IR", "Hybrid Lexical-Semantic Retrieval", "混合检索（BM25+向量）", "Fusing sparse BM25 lexical matching with dense vector similarity via RRF or learned weights.", ["混合检索", "RRF", "倒数排名融合"]),
+    ("vector_database", "IR", "Vector Database & ANN Indexing", "向量数据库与近似最近邻索引", "HNSW, IVF-PQ, and DiskANN storage engines for high-dimensional similarity search.", ["向量库", "HNSW", "ANN", "sqlite-vec", "FAISS"]),
+    ("structured_output", "NLP", "Constrained & Structured Decoding", "结构化输出与受限解码", "Grammar-guided and JSON-Schema constrained token sampling guaranteeing syntactic validity.", ["JSON Mode", "受限解码", "Schema-First"]),
+    ("speculative_decoding", "SYS", "Speculative Decoding", "投机解码", "Draft-and-verify decoding accelerating autoregressive generation without altering output distribution.", ["投机采样", "草稿模型加速"]),
+    ("test_time_compute", "AI", "Test-Time Compute Scaling", "测试时计算缩放", "Allocating additional inference compute via search, verification, or extended reasoning chains.", ["推理时缩放", "Inference-Time Scaling"]),
+
+    # --- Reasoning, Prompting & Post-Training (25) ---
+    ("cot", "AI", "Chain-of-Thought Reasoning", "思维链推理", "Eliciting intermediate step-by-step reasoning traces to solve multi-step logic, math, and coding problems.", ["CoT", "思维链", "慢思考"]),
+    ("tot_got", "AI", "Tree-of-Thoughts & Graph-of-Thoughts", "思维树与思维图搜索", "Deliberate branching search and backtracking over intermediate reasoning states.", ["ToT", "GoT", "搜索式推理"]),
+    ("reasoning_models", "AI", "Reinforcement-Learned Reasoning Models", "强化学习推理模型", "Models trained with verifiable reward RL to generate extended internal reasoning trajectories.", ["推理模型", "R1", "o1", "长思维链"]),
+    ("rlhf", "ML", "Reinforcement Learning from Human Feedback", "基于人类反馈的强化学习", "Aligning model behavior using reward models trained on human preference comparisons.", ["RLHF", "人类反馈对齐", "PPO"]),
+    ("dpo", "ML", "Direct Preference Optimization", "直接偏好优化", "Closed-form preference optimization aligning language models directly without an explicit reward model.", ["DPO", "偏好对齐"]),
+    ("grpo", "ML", "Group Relative Policy Optimization", "组相对策略优化", "Critic-free RL algorithm normalizing rewards across sampled completion groups for reasoning training.", ["GRPO", "RLVR", "可验证奖励强化学习"]),
+    ("sft", "ML", "Supervised Fine-Tuning & Instruction Tuning", "监督微调与指令微调", "Adapting pretrained models on curated instruction-response demonstrations.", ["SFT", "指令微调", "后训练"]),
+    ("lora", "ML", "Parameter-Efficient Fine-Tuning (LoRA / QLoRA)", "低秩适配微调", "Updating frozen pretrained weights via low-rank adapter matrices with optional 4-bit quantization.", ["LoRA", "QLoRA", "PEFT"]),
+    ("distillation", "ML", "Knowledge Distillation for LLMs", "大模型知识蒸馏", "Transferring reasoning and behavioral capabilities from frontier teacher models to smaller student models.", ["模型蒸馏", "数据蒸馏"]),
+    ("synthetic_data", "ML", "Synthetic Data Generation & Self-Play", "合成数据与自我博弈", "Generating filtered training trajectories, proofs, and dialogues using models and verifiers.", ["合成数据", "Self-Play", "数据飞轮"]),
+    ("icl", "NLP", "In-Context Learning & Few-Shot Prompting", "上下文学习与少样本提示", "Adapting model task behavior purely through prompt demonstrations without weight updates.", ["ICL", "Few-Shot", "少样本"]),
+    ("prompt_engineering", "NLP", "Prompt Engineering & System Prompts", "提示工程与系统提示词", "Systematic design, versioning, and testing of instructions, personas, and output constraints.", ["Prompt", "提示词工程", "系统提示"]),
+    ("context_engineering", "AI", "Context Engineering & Progressive Disclosure", "上下文工程与渐进披露", "Managing finite context budgets via dynamic retrieval, compaction, tool schemas, and state projection.", ["Context Engineering", "上下文管理", "上下文压缩"]),
+    ("prm_orm", "ML", "Process & Outcome Reward Models", "过程奖励与结果奖励模型", "Verifiers scoring either intermediate reasoning steps (PRM) or final solutions (ORM).", ["PRM", "ORM", "奖励模型", "Verifier"]),
+    ("self_consistency", "AI", "Self-Consistency & Majority Voting", "自一致性与多数投票", "Sampling multiple reasoning paths and aggregating final answers to reduce variance.", ["多数投票", "Best-of-N"]),
+    ("model_merging", "ML", "Model Merging & Task Arithmetic", "模型融合与任务算术", "Combining weights of multiple fine-tuned checkpoints via SLERP, TIES, or DARE without retraining.", ["模型合并", "Weight Merging"]),
+    ("continual_learning", "ML", "Continual Learning & Catastrophic Forgetting Mitigation", "持续学习与抗遗忘", "Updating model knowledge over time while preserving previously acquired capabilities.", ["持续学习", "灾难性遗忘"]),
+    ("curriculum_learning", "ML", "Data Mixing & Curriculum Scheduling", "数据配比与课程学习", "Structuring pretraining and mid-training data mixtures by difficulty, domain, and quality.", ["数据配比", "Mid-Training", "退火训练"]),
+    ("quantization", "SYS", "Post-Training Quantization (INT8 / FP8 / INT4 / GGUF)", "模型量化", "Reducing weight and activation bit-width (AWQ, GPTQ, GGUF, FP8) for memory and speed efficiency.", ["量化", "INT8", "FP8", "GGUF", "AWQ", "GPTQ"]),
+    ("pruning_sparsity", "ML", "Model Pruning & Structured Sparsity", "模型剪枝与结构化稀疏", "Removing redundant heads, layers, or weights to shrink inference footprint.", ["剪枝", "稀疏化"]),
+    ("spec_alignment", "AI", "Constitutional AI & Spec-Driven Alignment", "宪法式对齐与规范对齐", "Training models to follow explicit written behavioral specifications via AI feedback.", ["Constitutional AI", "Model Spec", "规范对齐"]),
+    ("unlearning", "ML", "Machine Unlearning & Knowledge Editing", "机器遗忘与知识编辑", "Selectively removing memorized sensitive data or patching factual errors in neural weights.", ["机器遗忘", "知识编辑"]),
+    ("uncertainty_calibration", "AI", "LLM Calibration & Abstention", "置信度校准与拒答", "Estimating epistemic uncertainty so models abstain instead of hallucinating unsupported claims.", ["幻觉抑制", "置信度校准", "拒答"]),
+    ("hallucination_mitigation", "NLP", "Hallucination Detection & Grounding", "幻觉检测与事实锚定", "Verifying generated claims against retrieved evidence and citing verifiable provenance.", ["幻觉检测", "事实锚定", "Grounding"]),
+    ("multilingual_transfer", "NLP", "Cross-Lingual Transfer & CJK Alignment", "跨语言迁移与中文对齐", "Bridging semantic representations across English, Chinese, and low-resource languages.", ["跨语种对齐", "多语种迁移"]),
+
+    # --- Agents, Tool Use, RAG & Memory (35) ---
+    ("ai_agent", "AI", "Autonomous & Agentic AI Systems", "人工智能智能体", "Goal-directed LLM systems perceiving environments, planning actions, invoking tools, and verifying outcomes.", ["Agent", "智能体", "Agentic AI"]),
+    ("tool_use", "AI", "Function Calling & Tool Use", "工具调用与函数调用", "Structured invocation of external APIs, CLIs, compilers, and databases within a model reasoning loop.", ["Tool Use", "Function Calling", "工具调用"]),
+    ("mcp", "SE", "Model Context Protocol (MCP)", "模型上下文协议", "Open protocol standardizing how AI applications discover and invoke external tools, resources, and prompts.", ["MCP", "上下文协议"]),
+    ("code_mode", "SE", "Code Mode & Programmatic Tool Orchestration", "代码模式工具编排", "Executing tool chains via generated scripts in sandboxed runtimes instead of verbose turn-by-turn JSON calls.", ["Code Mode", "脚本编排"]),
+    ("react_loop", "AI", "ReAct & Plan-Execute Agent Loops", "ReAct 与规划执行循环", "Interleaving reasoning traces with environment actions and observation writebacks.", ["ReAct", "Loop Agent", "执行循环"]),
+    ("multi_agent", "AI", "Multi-Agent Orchestration & Subagents", "多智能体编排与子代理", "Coordinating specialized peer or child agents via delegation, message passing, and isolated workspaces.", ["Multi-Agent", "子代理", "多智能体协作"]),
+    ("agent_harness", "SE", "Agent Harness & Control Plane", "智能体脚手架与控制面", "Runtime infrastructure governing tool sandboxes, quotas, leases, approvals, state persistence, and continuation.", ["Harness", "控制面", "LoopX", "DSH"]),
+    ("coding_agent", "SE", "Autonomous Coding Agents", "自主编程智能体", "Agents operating on repositories with file edits, shell execution, test loops, and git worktree isolation.", ["Coding Agent", "AI 编程助手", "SWE Agent"]),
+    ("worktree_isolation", "SE", "Git Worktree Isolation for Parallel Agents", "Git Worktree 并发隔离", "Using separate Git worktrees so parallel coding agents edit and test branches without workspace collisions.", ["Worktree", "并发分支隔离"]),
+    ("computer_use", "AI", "Computer Use & Browser Automation Agents", "计算机操作与浏览器代理", "Agents interacting with GUIs, DOM/accessibility trees, and DevTools protocols.", ["Computer Use", "GUI Agent", "浏览器代理"]),
+    ("deep_research", "AI", "Deep Research & Multi-Hop Synthesis Agents", "深度研究与多跳综合代理", "Long-horizon agents performing iterative search, primary-source verification, and structured report synthesis.", ["Deep Research", "深度调研"]),
+    ("human_in_the_loop", "AI", "Human-in-the-Loop Gates & Approval Boundaries", "人在回路与审批门禁", "Explicit operator gates separating autonomous local actions from high-impact external or irreversible operations.", ["HITL", "审批门禁", "User Gate"]),
+    ("rag", "IR", "Retrieval-Augmented Generation (RAG)", "检索增强生成", "Augmenting language model generation with dynamically retrieved external knowledge chunks or structured records.", ["RAG", "检索增强"]),
+    ("graph_rag", "IR", "GraphRAG & Knowledge-Graph-Augmented Retrieval", "图谱增强检索", "Combining entity/ontology graphs and multi-hop traversal with vector or lexical search.", ["GraphRAG", "知识图谱检索", "沿边遍历"]),
+    ("agentic_rag", "IR", "Agentic & Iterative Retrieval", "智能体主动检索", "Models formulating multi-step queries, inspecting evidence gaps, and re-querying tools iteratively.", ["Agentic RAG", "多轮检索"]),
+    ("chunking_indexing", "IR", "Document Chunking & Hierarchical Indexing", "文档切分与分层索引", "Semantic, structural, and parent-child document splitting strategies for retrieval precision.", ["分块策略", "文档切片", "Chunking"]),
+    ("query_rewriting", "IR", "Query Rewriting & HyDE Expansion", "查询改写与假设文档扩展", "Transforming ambiguous user prompts into structured search queries or hypothetical passages.", ["Query Rewriting", "HyDE", "查询扩展"]),
+    ("agent_memory", "AI", "Long-Term Agent Memory Architectures", "智能体长期记忆架构", "Episodic, semantic, and procedural memory stores persisting across sessions.", ["Agent Memory", "长期记忆", "情景记忆"]),
+    ("epistemic_graph", "IR", "Exosomatic Epistemic Graph & Human-Centric KOS", "外置认知图谱与人类主体 KOS", "Read-only rigid knowledge organization indexes paired with personal session ledgers to expand human domain awareness.", ["个人知识图谱", "认知辅助", "光学透镜索引", "KOS"]),
+    ("activation_decay", "AI", "Spreading Activation & Temporal Decay", "激活扩散与时间衰减", "Graph-based memory weighting propagating relevance along semantic edges with recency decay.", ["激活扩散", "遗忘曲线", "重激活"]),
+    ("serendipity_engine", "IR", "Controlled Serendipity & Topological Bridging", "受控漫游与拓扑桥接", "Surfacing non-obvious cross-domain connections grounded in co-occurrence, related edges, and information content.", ["受控漫游", "知识漫游", "跨域桥接"]),
+    ("faceted_classification", "IR", "Orthogonal Faceted Classification & Recall Isolation", "正交分面分类与召回隔离", "Separating domain, activity, process, artifact, and stance into isolated recall pools to prevent polysemy collisions.", ["分面分类", "正交分面", "分面隔离"]),
+    ("workflow_state_machine", "SE", "Durable Workflow Execution & Checkpointing", "持久化工作流与检查点恢复", "Event-sourced or checkpointed agent runs enabling deterministic resume after interruptions.", ["检查点恢复", "状态机", "Durable Execution"]),
+    ("skills_plugins", "SE", "Composable Agent Skills & Plugin Architecture", "可组合技能与插件架构", "Modular instruction bundles and capability-scoped runtime plugins loaded on demand.", ["Agent Skills", "插件系统", "Cordis"]),
+    ("sandbox_execution", "SEC", "Agent Tool Sandboxing & Capability Seams", "智能体沙箱与能力边界", "OS-level filesystem, network, and process confinement limiting blast radius of model-generated actions.", ["沙箱隔离", "最小权限", "Capability Seam"]),
+    ("background_agents", "AI", "Always-On & Scheduled Background Agents", "常驻后台与定时智能体", "Event-driven or cron-triggered agents running bounded maintenance, monitoring, and briefing loops.", ["后台代理", "定时任务", "Heartbeat"]),
+    ("session_compression", "NLP", "Conversation Compaction & Delta Projection", "会话压缩与增量投影", "Summarizing or delta-projecting long interaction histories while preserving verifiable pointers to originals.", ["上下文压缩", "渐进上下文"]),
+    ("semantic_caching", "SYS", "Prompt & Semantic Caching", "提示词缓存与语义缓存", "Reusing KV-cache prefixes and embedding-matched responses to slash latency and token cost.", ["Prompt Cache", "语义缓存"]),
+    ("model_routing", "SYS", "Dynamic Model Routing & Cascading", "模型路由与级联调度", "Dispatching requests across fast/cheap and frontier reasoning models based on estimated complexity.", ["模型路由", "级联推理"]),
+    ("ontology_alignment", "IR", "Cross-KOS Ontology Alignment & Crosswalks", "跨词表本体对齐与映射", "Constructing provenance-tracked exactMatch/closeMatch bridges across heterogeneous classification standards.", ["本体对齐", "词表映射", "Crosswalk"]),
+    ("skos_knowledge_org", "IR", "SKOS & Linked Data Knowledge Organization", "SKOS 知识组织体系", "Representing controlled vocabularies with broader, narrower, related, prefLabel, and altLabel semantics.", ["SKOS", "受控词表", "叙词表"]),
+    ("provenance_tracking", "SE", "Data Provenance & License Isolation (PROV-O)", "数据溯源与许可隔离", "Tracking source lineage, license SPDX boundaries, and attribution requirements at record granularity.", ["PROV-O", "数据溯源", "许可隔离"]),
+    ("spatial_knowledge_map", "IR", "2D Semantic Knowledge Map & LoD Rendering", "二维知识地图与多级细节渲染", "Offline UMAP/Voronoi spatial embeddings indexed in R*Tree for zero-layout viewport exploration.", ["知识地图", "LoD", "Voronoi", "UMAP"]),
+    ("voice_realtime_agent", "AI", "Real-Time Speech-to-Speech Agents", "实时语音对话代理", "Low-latency full-duplex audio foundation models supporting interruption and turn-taking.", ["实时语音", "全双工语音"]),
+    ("document_ocr_vlm", "CV", "Layout-Aware Document Parsing & VLM OCR", "版面感知文档解析与视觉 OCR", "Converting complex PDFs, tables, and formulas into structured Markdown/JSON via vision-language models.", ["文档解析", "PDF 解析", "视觉 OCR"]),
+
+    # --- Safety, Security, Alignment & Interpretability (25) ---
+    ("ai_safety", "SEC", "AI Safety & Alignment Engineering", "人工智能安全与对齐工程", "Preventing unintended harmful, deceptive, or misaligned behavior in frontier AI systems.", ["AI 安全", "对齐工程"]),
+    ("jailbreak", "SEC", "Jailbreaking & Adversarial Prompting", "越狱攻击与破限对抗", "Crafting adversarial prompts to bypass model safety refusals or policy boundaries.", ["破限", "越狱", "Jailbreak", "对抗提示"]),
+    ("prompt_injection", "SEC", "Direct & Indirect Prompt Injection", "直接与间接提示词注入", "Malicious instructions embedded in untrusted external data hijacking agent tool execution.", ["提示词注入", "间接注入", "Prompt Injection"]),
+    ("red_teaming", "SEC", "Automated & Human AI Red Teaming", "AI 红队测试", "Systematic adversarial probing to uncover safety, security, and policy failure modes before release.", ["红队测试", "对抗评测"]),
+    ("guardrails", "SEC", "Input/Output Guardrails & Policy Classifiers", "输入输出护栏与策略分类器", "Runtime filters enforcing content safety, PII redaction, and tool-call authorization policies.", ["安全护栏", "Guardrails", "内容审核"]),
+    ("mech_interp", "AI", "Mechanistic Interpretability", "机制可解释性", "Reverse-engineering internal neural circuits, features, and attention heads into human-understandable algorithms.", ["机制可解释性", "电路分析"]),
+    ("sae_features", "AI", "Sparse Autoencoders & Feature Steering", "稀疏自编码器与特征操控", "Decomposing polysemantic neuron activations into monosemantic interpretable directions.", ["SAE", "稀疏自编码器", "激活操控"]),
+    ("watermarking", "SEC", "AI Content Watermarking & Provenance", "AI 内容水印与溯源标识", "Statistical token-distribution watermarking and cryptographic C2PA signing for generated media.", ["数字水印", "C2PA", "内容溯源"]),
+    ("data_poisoning", "SEC", "Training Data Poisoning & Backdoor Attacks", "训练数据投毒与后门攻击", "Injecting malicious samples into pretraining or fine-tuning corpora to implant hidden triggers.", ["数据投毒", "后门攻击"]),
+    ("membership_inference", "SEC", "Memorization & Membership Inference Auditing", "训练记忆与成员推理审计", "Testing whether models regurgitate private or copyrighted training records.", ["隐私泄露审计", "成员推理"]),
+    ("sandbagging_deception", "SEC", "Deceptive Alignment & Capability Elicitation", "伪装对齐与能力诱发评估", "Detecting strategic underperformance (sandbagging) or reward hacking during evaluation.", ["Reward Hacking", "奖励作弊", "Sandbagging"]),
+    ("privilege_escalation_agent", "SEC", "Agent Privilege Escalation & Confused Deputy", "智能体越权与混淆代理人防护", "Preventing untrusted tool outputs from triggering unauthorized file, network, or credential actions.", ["越权防护", "混淆代理人"]),
+    ("data_license_compliance", "SEC", "Open Dataset License & AI-Train Compliance", "开源数据集许可与训练合规", "Respecting CC BY-SA share-alike boundaries, CC BY-ND no-derivatives, and robots ai-train=no directives.", ["数据合规", "开源许可边界", "ai-train"]),
+    ("pii_redaction", "SEC", "PII Detection & Boundary Scanning", "个人隐私脱敏与公开边界扫描", "Automated detection of credentials, local absolute paths, and private identifiers prior to publication.", ["隐私脱敏", "边界扫描"]),
+    ("model_extraction", "SEC", "Model Extraction & Weight Security", "模型窃取与权重安全", "Protecting proprietary model weights and preventing unauthorized behavioral cloning via APIs.", ["权重安全", "模型窃取"]),
+    ("bias_fairness_llm", "AI", "Algorithmic Bias & Cultural Representation Auditing", "算法偏见与文化表征审计", "Measuring geographic, linguistic, and demographic skew in training datasets and model outputs.", ["算法偏见", "文化对齐", "地理偏差"]),
+    ("copyright_attribution", "SEC", "Attribution & Citation Fidelity", "出处署名与引用保真", "Ensuring generated summaries and datasets accurately preserve source attribution and license notices.", ["引用保真", "署名合规"]),
+    ("formal_verification_ai", "SE", "Neuro-Symbolic & Formal Verification Assisted by LLMs", "神经符号与形式化验证", "Pairing LLM proof search with Lean, Coq, or SMT solvers for mathematically verified outputs.", ["形式化验证", "Lean", "神经符号"]),
+    ("code_security_audit", "SEC", "AI-Assisted Vulnerability Discovery & Patching", "AI 辅助漏洞挖掘与修复", "Using coding agents for static/dynamic taint analysis, fuzzing, and security patch verification.", ["漏洞挖掘", "安全审计"]),
+    ("supply_chain_ai", "SEC", "AI Model & Pickle/Safetensors Supply Chain Security", "AI 模型供应链安全", "Verifying SHA256 digests and preferring SafeTensors/ONNX over unsafe pickle deserialization.", ["SafeTensors", "模型供应链安全"]),
+    ("differential_privacy_ml", "SEC", "Differential Privacy in Foundation Models", "大模型差分隐私", "Mathematical privacy guarantees bounding individual training record influence during fine-tuning.", ["差分隐私", "DP-SGD"]),
+    ("adversarial_robustness", "SEC", "Multimodal Adversarial Examples", "多模态对抗样本", "Perturbations in images or audio designed to mislead vision-language and speech models.", ["对抗样本", "鲁棒性"]),
+    ("oversight_scalable", "AI", "Scalable Oversight & Debate", "可扩展监督与 AI 辩论", "Using structured critique, decomposition, and debate so humans can supervise superhuman-scale tasks.", ["可扩展监督", "Scalable Oversight"]),
+    ("audit_logging_agent", "SE", "Immutable Agent Action Ledgers & Receipts", "不可变智能体行动账本与回执", "Recording append-only transcripts, tool arguments, validation receipts, and lease transitions.", ["审计账本", "行动回执"]),
+    ("eval_contamination", "AI", "Benchmark Contamination & Leakage Detection", "基准测试污染与泄漏检测", "Identifying n-gram overlap or held-out leakage that inflates reported model scores.", ["评测污染", "数据泄漏"]),
+
+    # --- Inference Infrastructure, MLOps & Evaluation (30) ---
+    ("vllm_serving", "SYS", "High-Throughput LLM Serving (vLLM / SGLang / TensorRT-LLM)", "大模型高吞吐推理引擎", "Continuous batching, RadixAttention, and tensor-parallel serving engines for production LLMs.", ["vLLM", "SGLang", "TensorRT-LLM", "连续批处理"]),
+    ("local_inference", "SYS", "Local LLM Inference (llama.cpp / Ollama / ONNX Runtime)", "本地大模型推理运行时", "CPU/GPU local execution engines running quantized GGUF and ONNX models offline.", ["llama.cpp", "Ollama", "ONNX Runtime", "本地部署"]),
+    ("distributed_training", "SYS", "Distributed Training Parallelism (DP / TP / PP / FSDP / ZeRO)", "分布式训练并行策略", "Scaling multi-GPU training via data, tensor, pipeline, context, and expert parallelism.", ["FSDP", "DeepSpeed", "ZeRO", "张量并行", "流水线并行"]),
+    ("gpu_kernels", "SYS", "Custom GPU Kernels (Triton / CUDA)", "自定义 GPU 算子开发", "Writing fused matrix-multiplication, normalization, and attention kernels in Triton or CUDA.", ["Triton", "CUDA 算子", "算子融合"]),
+    ("llm_benchmarks", "AI", "LLM Capability Benchmarks & Leaderboards", "大模型能力基准评测", "Standardized evaluation suites covering coding (SWE-bench), math, reasoning, and instruction following.", ["Benchmark", "SWE-bench", "评测集"]),
+    ("llm_as_judge", "AI", "LLM-as-a-Judge & Rubric Evaluation", "大模型自动裁判与量规评测", "Using calibrated rubric prompts and pairwise comparisons to evaluate open-ended outputs.", ["LLM-as-a-Judge", "自动评审"]),
+    ("trajectory_eval", "AI", "Agent Trajectory & Efficiency Evaluation", "智能体轨迹与效率评测", "Measuring pass rate, step count, token efficiency, and tool-failure recovery across multi-turn runs.", ["轨迹评测", "Agent Eval"]),
+    ("regression_testing_ai", "SE", "Prompt & Pipeline Regression Testing", "提示词与流水线回归测试", "Deterministic golden-set probes preventing silent quality degradation across model or index updates.", ["回归评测", "探针测试"]),
+    ("observability_llm", "SE", "LLM Tracing & Token Cost Observability", "大模型链路追踪与成本观测", "Structured telemetry logging latencies (TTFT/TPOT), cache hit rates, and tool spans.", ["链路追踪", "TTFT", "TPOT", "可观测性"]),
+    ("data_curation_pipeline", "SE", "Web-Scale Corpus Curation & Deduplication", "大规模语料清洗与去重", "MinHash LSH deduplication, language ID, perplexity filtering, and quality classification for training data.", ["语料清洗", "MinHash 去重"]),
+    ("synthetic_benchmarks", "AI", "Dynamic & Contamination-Free Benchmarks", "动态无污染评测基准", "Continuously refreshed or procedurally generated tasks preventing test-set memorization.", ["动态基准", "防刷榜评测"]),
+    ("latency_optimization", "SYS", "TTFT & Prefill-Decode Disaggregation", "首字延迟与预填充解码分离", "Separating compute-bound prefill nodes from memory-bound decode nodes to meet SLOs.", ["PD 分离", "首字延迟", "Prefill"]),
+    ("lora_serving", "SYS", "Multi-LoRA Dynamic Adapter Serving", "多 LoRA 动态适配推理", "Serving hundreds of task-specific LoRA adapters simultaneously on a single shared base model.", ["Multi-LoRA", "动态适配器"]),
+    ("embodied_sim", "AI", "Physics Simulation & Sim-to-Real Transfer", "物理仿真与虚实迁移", "Training robotic policies in GPU-accelerated physics simulators before real-world deployment.", ["Sim2Real", "机器人仿真"]),
+    ("audio_asr_tts", "NLP", "Neural Speech Recognition & Expressive TTS", "神经语音识别与情感语音合成", "End-to-end Whisper-class ASR and zero-shot neural codec text-to-speech synthesis.", ["ASR", "TTS", "语音合成", "Whisper"]),
+    ("video_generation", "CV", "Video Foundation & World Generation Models", "视频生成大模型", "Spatiotemporal diffusion transformers generating temporally consistent video from text or keyframes.", ["视频生成", "Sora", "DiT 视频"]),
+    ("ai_for_science", "AI", "AI for Science (Protein Folding / Materials / Weather)", "科学智能（AI4Science）", "Applying geometric deep learning and foundation models to molecular, physical, and climate discovery.", ["AI4Science", "AlphaFold", "科学发现"]),
+    ("ai_coding_ides", "SE", "AI-Native IDEs & CLI Coding Harnesses", "AI 原生开发工具与终端编程框架", "Editor and terminal workflows integrating codebase indexing, diffs, LSPs, and autonomous edit-test loops.", ["AI IDE", "终端编程代理", "Vibe Coding"]),
+    ("schema_first_design", "SE", "Schema-First & Contract-Driven AI Engineering", "契约驱动与 Schema 优先 AI 工程", "Separating typed data contracts and deterministic verification from probabilistic LLM generation.", ["Schema-First", "契约驱动"]),
+    ("edge_npu_runtime", "SYS", "NPU / Mobile Accelerator Compilation", "端侧 NPU 加速编译", "Compiling neural graphs for Apple MLX, DirectML, Vulkan, and mobile NPUs.", ["MLX", "DirectML", "端侧推理"]),
+    ("federated_private_ai", "SYS", "Local-First & Privacy-Preserving Personal AI", "本地优先与隐私保护个人 AI", "Running indexing, personal knowledge graphs, and inference locally under full user data sovereignty.", ["本地优先", "数据主权", "Personal AI"]),
+    ("sqlite_embedded_ai", "IR", "Embedded SQLite Hybrid Retrieval (FTS5 + R*Tree + Vectors)", "嵌入式 SQLite 混合检索底座", "Zero-server single-file relational + full-text + spatial + vector databases for portable AI apps.", ["SQLite FTS5", "嵌入式检索库"]),
+    ("synthetic_personas", "AI", "Multi-Agent Social & Economic Simulation", "多智能体社会与经济模拟", "Simulating markets, organizations, and discourse dynamics with populations of LLM agents.", ["社会模拟", "经济模拟"]),
+    ("ai_labor_economics", "AI", "AI Economic Impact & Task Augmentation Measurement", "AI 经济影响与任务增强度量", "Empirical measurement of automation vs. augmentation across occupations and tasks (e.g., AEI).", ["AI 经济学", "任务增强", "职业暴露度"]),
+    ("knowledge_distill_kos", "IR", "LLM-Assisted Taxonomy & Terminology Curation", "大模型辅助分类法与术语构建", "Using controlled candidate pools and human-verified KOS anchors to classify noisy text streams.", ["受控勾选", "术语标准化"]),
+    ("human_ai_copilots", "AI", "Mixed-Initiative Cognitive Augmentation Tools", "混合主动认知增强工具", "Interfaces supporting human System-1 intuition and System-2 verification without replacing human agency.", ["认知增强", "人机协同", "混合主动"]),
+    ("long_horizon_planning", "AI", "Long-Horizon Task Decomposition & Replanning", "长程任务分解与动态重规划", "Breaking multi-hour goals into verifiable bounded slices with evidence-driven replanning.", ["长程规划", "动态重规划"]),
+    ("tool_discovery", "AI", "Dynamic Tool Discovery & Capability Admission", "动态工具发现与能力准入", "Selecting and loading only task-relevant tools and skills to avoid context bloat.", ["工具路由", "能力准入"]),
+    ("deterministic_replay", "SE", "Deterministic Eval Replay & Provenance Receipts", "确定性回放与验证回执", "Caching and replaying tool/model traces to debug non-deterministic agent regressions.", ["确定性回放", "评测复现"]),
+    ("open_weights_ecosystem", "SE", "Open-Weights Foundation Model Ecosystem", "开源权重模型生态", "Licensing, model cards, quantization formats, and community governance of open-weight models.", ["开源大模型", "Open Weights", "Model Card"]),
+
+    # --- Domain-Specific Contemporary Computing & Knowledge Systems (15) ---
+    ("knowledge_graph_embed", "IR", "Knowledge Graph Embeddings & Link Prediction", "知识图谱嵌入与链接预测", "Representing entities and relations in continuous spaces for completion and multi-hop reasoning.", ["图谱嵌入", "链接预测"]),
+    ("neuro_symbolic_rag", "IR", "Neuro-Symbolic Retrieval & Constraint Filtering", "神经符号检索与约束过滤", "Combining symbolic SQL/SPARQL/facet filters with dense semantic similarity scoring.", ["神经符号检索", "约束过滤"]),
+    ("chinese_nlp_cjk", "NLP", "CJK Segmentation, Normalization & Cross-Script Matching", "中文分词、繁简归一与跨字形匹配", "Handling Traditional/Simplified equivalence, subword n-grams, and mixed Chinese-English technical terms.", ["繁简归一", "中文检索", "CJK 分词"]),
+    ("personal_knowledge_mgmt", "IR", "Personal Knowledge Management (PKM) & Bidirectional Linking", "个人知识管理与双向链接", "Tools and open file vaults (e.g., Markdown/SQLite) supporting networked human thought.", ["PKM", "双向链接", "个人知识库"]),
+    ("cognitive_ergonomics", "AI", "Cognitive Load & Exosomatic Memory Design", "认知负荷与外置记忆设计", "Designing information displays and semantic zoom levels that match human working-memory limits.", ["认知负荷", "语义缩放"]),
+    ("causal_inference_ml", "ML", "Causal Discovery & Counterfactual ML", "因果发现与反事实机器学习", "Estimating interventional and counterfactual effects beyond correlational prediction.", ["因果推断", "反事实推理"]),
+    ("graph_neural_networks", "ML", "Graph Neural Networks & Message Passing", "图神经网络与消息传递", "Deep learning architectures operating directly on relational graphs and topological neighborhoods.", ["GNN", "图神经网络"]),
+    ("contrastive_learning", "ML", "Contrastive Representation Learning (InfoNCE / CLIP)", "对比表征学习", "Training aligned multimodal or multilingual encoders by pulling positives together and pushing negatives apart.", ["对比学习", "CLIP", "InfoNCE"]),
+    ("synthetic_code_verif", "SE", "Execution-Guided Code Generation & Fuzzing", "执行反馈驱动代码生成", "Iteratively repairing generated code using compiler diagnostics, unit tests, and property-based fuzzers.", ["测试驱动生成", "自动修复"]),
+    ("agent_protocols_a2a", "SE", "Agent-to-Agent Communication Protocols", "智能体间通信协议", "Standardized discovery, task handoff, and artifact exchange protocols between autonomous agents.", ["A2A", "智能体通信"]),
+    ("low_resource_mt", "NLP", "Domain-Adapted Machine Translation & Terminology Glossary", "领域自适应机器翻译与术语表", "Terminology-constrained translation preserving technical consistency across languages.", ["术语翻译", "领域机翻"]),
+    ("information_content_ic", "IR", "Taxonomic Information Content (IC) Weighting", "分类体系信息量权重", "Scoring node specificity via -log P(node) to prevent generic root concepts from dominating matches.", ["信息量权重", "IC 门禁"]),
+    ("steiner_tree_bridging", "IR", "Subgraph & Steiner-Tree Concept Bridging", "子图与斯坦纳树概念桥接", "Finding minimal informative connecting paths across disparate knowledge domains.", ["斯坦纳树", "概念桥接"]),
+    ("semantic_clustering", "ML", "Dimensionality Reduction & Manifold Clustering (UMAP / HDBSCAN)", "流形降维与语义聚类", "Projecting high-dimensional semantic embeddings into stable low-dimensional topological maps.", ["UMAP", "HDBSCAN", "流形降维"]),
+    ("open_science_infra", "IR", "Open Scholarly Graphs & Bibliometrics (OpenAlex)", "开放学术图谱与文献计量", "Open CC0 bibliographic infrastructures mapping works, citations, topics, and cross-field co-occurrence.", ["开放科学", "OpenAlex", "文献计量"]),
+]

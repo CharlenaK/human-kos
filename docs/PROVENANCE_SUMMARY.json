@@ -1,0 +1,413 @@
+{
+  "schema_version": "1.0.0",
+  "gate_policies": {
+    "G-01": "A_revised",
+    "G-02": "A",
+    "G-03": "A",
+    "G-04": "A"
+  },
+  "packages": {
+    "human_kos_core.sqlite": {
+      "counts": {
+        "nodes": 84552,
+        "aliases": 266652,
+        "edges": 113789,
+        "embeddings": 66571
+      },
+      "provenance": [
+        {
+          "source_id": "AAT",
+          "source_name": "Getty Art & Architecture Thesaurus (incl. AAT-Taiwan zh labels)",
+          "version": "2026-01",
+          "license_spdx": "ODC-By-1.0",
+          "dist_tier": "dist_core"
+        },
+        {
+          "source_id": "ACM_CCS",
+          "source_name": "ACM Computing Classification System 2012",
+          "version": "2012",
+          "license_spdx": "ACM-CCS-Attribution",
+          "dist_tier": "dist_core"
+        },
+        {
+          "source_id": "AEI",
+          "source_name": "Anthropic Economic Index (Collaboration 5-Bucket Taxonomy & Calibration)",
+          "version": "2025-2026",
+          "license_spdx": "CC-BY-4.0",
+          "dist_tier": "dist_core"
+        },
+        {
+          "source_id": "ATUS",
+          "source_name": "US BLS American Time Use Survey Activity Coding Lexicon",
+          "version": "2025",
+          "license_spdx": "US-Public-Domain",
+          "dist_tier": "dist_core"
+        },
+        {
+          "source_id": "COMPENDIUM",
+          "source_name": "2024 Adult Compendium of Physical Activities (MET attributes)",
+          "version": "2024",
+          "license_spdx": "CC-BY-4.0",
+          "dist_tier": "dist_core"
+        },
+        {
+          "source_id": "CUSTOM_SELF",
+          "source_name": "Project Self-Built Extensions (ACM AI ~150, Facet V Stances 5, 2024/25 Jobs 36, YAGO Top300 Map)",
+          "version": "1.0.0",
+          "license_spdx": "CC0-1.0",
+          "dist_tier": "dist_core"
+        },
+        {
+          "source_id": "ESCO",
+          "source_name": "ESCO v1.2.1 (European Skills, Competences, Qualifications and Occupations)",
+          "version": "1.2.1",
+          "license_spdx": "CC-BY-4.0",
+          "dist_tier": "dist_core"
+        },
+        {
+          "source_id": "GLOTTOLOG",
+          "source_name": "Glottolog 5.4 (Families & Languages, Dialects Excluded)",
+          "version": "5.4",
+          "license_spdx": "CC-BY-4.0",
+          "dist_tier": "dist_core"
+        },
+        {
+          "source_id": "ICATUS",
+          "source_name": "UN ICATUS 2016 (International Classification of Activities for Time-Use Statistics)",
+          "version": "2016",
+          "license_spdx": "UN-Public-Statistical",
+          "dist_tier": "dist_core"
+        },
+        {
+          "source_id": "OA_CONCEPT",
+          "source_name": "OpenAlex Concepts (Top works_count flat pool)",
+          "version": "2026-snapshot",
+          "license_spdx": "CC0-1.0",
+          "dist_tier": "dist_core"
+        },
+        {
+          "source_id": "OA_COOCCUR",
+          "source_name": "OpenAlex Works Sample Topic Co-occurrence",
+          "version": "2026-snapshot",
+          "license_spdx": "CC0-1.0",
+          "dist_tier": "dist_core"
+        },
+        {
+          "source_id": "OA_TREE",
+          "source_name": "OpenAlex Topic Taxonomy (Domain/Field/Subfield/Topic)",
+          "version": "2026-snapshot",
+          "license_spdx": "CC0-1.0",
+          "dist_tier": "dist_core"
+        },
+        {
+          "source_id": "ONET",
+          "source_name": "O*NET 31.0 Content Model (GWA/IWA/DWA)",
+          "version": "31.0",
+          "license_spdx": "CC-BY-4.0",
+          "dist_tier": "dist_core"
+        },
+        {
+          "source_id": "PERIODO",
+          "source_name": "PeriodO Historical Period Gazetteer",
+          "version": "2026-snapshot",
+          "license_spdx": "CC0-1.0",
+          "dist_tier": "dist_core"
+        },
+        {
+          "source_id": "YAGO_TAX",
+          "source_name": "YAGO 4.6 Taxonomy Class Definitions & Multilingual Labels",
+          "version": "4.6",
+          "license_spdx": "CC-BY-4.0",
+          "dist_tier": "dist_core"
+        }
+      ]
+    },
+    "human_kos_ext/edam.sqlite": {
+      "counts": {
+        "nodes": 2360,
+        "aliases": 2720,
+        "edges": 3439,
+        "embeddings": 2360
+      },
+      "provenance": [
+        {
+          "source_id": "AAT",
+          "source_name": "Getty Art & Architecture Thesaurus (incl. AAT-Taiwan zh labels)",
+          "version": "2026-01",
+          "license_spdx": "ODC-By-1.0",
+          "dist_tier": "dist_core"
+        },
+        {
+          "source_id": "CUSTOM_SELF",
+          "source_name": "Project Self-Built Extensions (ACM AI ~150, Facet V Stances 5, 2024/25 Jobs 36, YAGO Top300 Map)",
+          "version": "1.0.0",
+          "license_spdx": "CC0-1.0",
+          "dist_tier": "dist_core"
+        },
+        {
+          "source_id": "EDAM",
+          "source_name": "EDAM Ontology 1.25 (Active Terms Only)",
+          "version": "1.25",
+          "license_spdx": "CC-BY-SA-4.0",
+          "dist_tier": "dist_ext_sa"
+        },
+        {
+          "source_id": "YAGO_TAX",
+          "source_name": "YAGO 4.6 Taxonomy Class Definitions & Multilingual Labels",
+          "version": "4.6",
+          "license_spdx": "CC-BY-4.0",
+          "dist_tier": "dist_core"
+        }
+      ]
+    },
+    "human_kos_ext/compendium.sqlite": {
+      "counts": {
+        "nodes": 1134,
+        "aliases": 13,
+        "edges": 1133,
+        "embeddings": 1134
+      },
+      "provenance": [
+        {
+          "source_id": "AAT",
+          "source_name": "Getty Art & Architecture Thesaurus (incl. AAT-Taiwan zh labels)",
+          "version": "2026-01",
+          "license_spdx": "ODC-By-1.0",
+          "dist_tier": "dist_core"
+        },
+        {
+          "source_id": "COMPENDIUM",
+          "source_name": "2024 Adult Compendium of Physical Activities (MET attributes)",
+          "version": "2024",
+          "license_spdx": "CC-BY-4.0",
+          "dist_tier": "dist_core"
+        },
+        {
+          "source_id": "YAGO_TAX",
+          "source_name": "YAGO 4.6 Taxonomy Class Definitions & Multilingual Labels",
+          "version": "4.6",
+          "license_spdx": "CC-BY-4.0",
+          "dist_tier": "dist_core"
+        }
+      ]
+    },
+    "human_kos_ext/iscedf.sqlite": {
+      "counts": {
+        "nodes": 219,
+        "aliases": 30,
+        "edges": 218,
+        "embeddings": 219
+      },
+      "provenance": [
+        {
+          "source_id": "AAT",
+          "source_name": "Getty Art & Architecture Thesaurus (incl. AAT-Taiwan zh labels)",
+          "version": "2026-01",
+          "license_spdx": "ODC-By-1.0",
+          "dist_tier": "dist_core"
+        },
+        {
+          "source_id": "CUSTOM_SELF",
+          "source_name": "Project Self-Built Extensions (ACM AI ~150, Facet V Stances 5, 2024/25 Jobs 36, YAGO Top300 Map)",
+          "version": "1.0.0",
+          "license_spdx": "CC0-1.0",
+          "dist_tier": "dist_core"
+        },
+        {
+          "source_id": "ISCEDF",
+          "source_name": "UNESCO ISCED-F 2013 Fields of Education and Training",
+          "version": "2013",
+          "license_spdx": "CC-BY-SA-3.0-IGO",
+          "dist_tier": "dist_ext_sa"
+        }
+      ]
+    },
+    "human_kos_ext/unesco.sqlite": {
+      "counts": {
+        "nodes": 4501,
+        "aliases": 4019,
+        "edges": 10791,
+        "embeddings": 4501
+      },
+      "provenance": [
+        {
+          "source_id": "AAT",
+          "source_name": "Getty Art & Architecture Thesaurus (incl. AAT-Taiwan zh labels)",
+          "version": "2026-01",
+          "license_spdx": "ODC-By-1.0",
+          "dist_tier": "dist_core"
+        },
+        {
+          "source_id": "CUSTOM_SELF",
+          "source_name": "Project Self-Built Extensions (ACM AI ~150, Facet V Stances 5, 2024/25 Jobs 36, YAGO Top300 Map)",
+          "version": "1.0.0",
+          "license_spdx": "CC0-1.0",
+          "dist_tier": "dist_core"
+        },
+        {
+          "source_id": "UNESCO",
+          "source_name": "UNESCO Thesaurus",
+          "version": "2026-snapshot",
+          "license_spdx": "CC-BY-SA-3.0-IGO",
+          "dist_tier": "dist_ext_sa"
+        },
+        {
+          "source_id": "YAGO_TAX",
+          "source_name": "YAGO 4.6 Taxonomy Class Definitions & Multilingual Labels",
+          "version": "4.6",
+          "license_spdx": "CC-BY-4.0",
+          "dist_tier": "dist_core"
+        }
+      ]
+    },
+    "human_kos_ext/glottolog.sqlite": {
+      "counts": {
+        "nodes": 12713,
+        "aliases": 933,
+        "edges": 12712,
+        "embeddings": 0
+      },
+      "provenance": [
+        {
+          "source_id": "AAT",
+          "source_name": "Getty Art & Architecture Thesaurus (incl. AAT-Taiwan zh labels)",
+          "version": "2026-01",
+          "license_spdx": "ODC-By-1.0",
+          "dist_tier": "dist_core"
+        },
+        {
+          "source_id": "GLOTTOLOG",
+          "source_name": "Glottolog 5.4 (Families & Languages, Dialects Excluded)",
+          "version": "5.4",
+          "license_spdx": "CC-BY-4.0",
+          "dist_tier": "dist_core"
+        },
+        {
+          "source_id": "YAGO_TAX",
+          "source_name": "YAGO 4.6 Taxonomy Class Definitions & Multilingual Labels",
+          "version": "4.6",
+          "license_spdx": "CC-BY-4.0",
+          "dist_tier": "dist_core"
+        }
+      ]
+    },
+    "human_kos_ext/periodo.sqlite": {
+      "counts": {
+        "nodes": 9538,
+        "aliases": 1142,
+        "edges": 9537,
+        "embeddings": 0
+      },
+      "provenance": [
+        {
+          "source_id": "AAT",
+          "source_name": "Getty Art & Architecture Thesaurus (incl. AAT-Taiwan zh labels)",
+          "version": "2026-01",
+          "license_spdx": "ODC-By-1.0",
+          "dist_tier": "dist_core"
+        },
+        {
+          "source_id": "CUSTOM_SELF",
+          "source_name": "Project Self-Built Extensions (ACM AI ~150, Facet V Stances 5, 2024/25 Jobs 36, YAGO Top300 Map)",
+          "version": "1.0.0",
+          "license_spdx": "CC0-1.0",
+          "dist_tier": "dist_core"
+        },
+        {
+          "source_id": "PERIODO",
+          "source_name": "PeriodO Historical Period Gazetteer",
+          "version": "2026-snapshot",
+          "license_spdx": "CC0-1.0",
+          "dist_tier": "dist_core"
+        },
+        {
+          "source_id": "YAGO_TAX",
+          "source_name": "YAGO 4.6 Taxonomy Class Definitions & Multilingual Labels",
+          "version": "4.6",
+          "license_spdx": "CC-BY-4.0",
+          "dist_tier": "dist_core"
+        }
+      ]
+    },
+    "human_kos_ext/aat.sqlite": {
+      "counts": {
+        "nodes": 57212,
+        "aliases": 210843,
+        "edges": 57203,
+        "embeddings": 0
+      },
+      "provenance": [
+        {
+          "source_id": "AAT",
+          "source_name": "Getty Art & Architecture Thesaurus (incl. AAT-Taiwan zh labels)",
+          "version": "2026-01",
+          "license_spdx": "ODC-By-1.0",
+          "dist_tier": "dist_core"
+        },
+        {
+          "source_id": "CUSTOM_SELF",
+          "source_name": "Project Self-Built Extensions (ACM AI ~150, Facet V Stances 5, 2024/25 Jobs 36, YAGO Top300 Map)",
+          "version": "1.0.0",
+          "license_spdx": "CC0-1.0",
+          "dist_tier": "dist_core"
+        },
+        {
+          "source_id": "YAGO_TAX",
+          "source_name": "YAGO 4.6 Taxonomy Class Definitions & Multilingual Labels",
+          "version": "4.6",
+          "license_spdx": "CC-BY-4.0",
+          "dist_tier": "dist_core"
+        }
+      ]
+    },
+    "human_kos_ext/lcsh.sqlite": {
+      "counts": {
+        "nodes": 275231,
+        "aliases": 303431,
+        "edges": 430034,
+        "embeddings": 0
+      },
+      "provenance": [
+        {
+          "source_id": "LCSH",
+          "source_name": "Library of Congress Subject Headings (Deduplicated / Non-subdivided)",
+          "version": "2026-snapshot",
+          "license_spdx": "CC0-1.0",
+          "dist_tier": "dist_ext_permissive"
+        }
+      ]
+    },
+    "human_kos_ext/dila.sqlite": {
+      "counts": {
+        "nodes": 109096,
+        "aliases": 132078,
+        "edges": 109094,
+        "embeddings": 0
+      },
+      "provenance": [
+        {
+          "source_id": "DILA",
+          "source_name": "DILA Buddhist Studies Authority Databases (Person / Place / Time)",
+          "version": "2026-11",
+          "license_spdx": "CC-BY-SA-3.0",
+          "dist_tier": "dist_ext_sa"
+        }
+      ]
+    },
+    "human_kos_ext/cn_rel.sqlite": {
+      "counts": {
+        "cn_relations": 189095,
+        "cn_alias": 349777
+      },
+      "provenance": [
+        {
+          "source_id": "CONCEPTNET",
+          "source_name": "ConceptNet 5.7 (4 Action Relations + zh->en Synonym Bridge)",
+          "version": "5.7.0",
+          "license_spdx": "CC-BY-SA-4.0",
+          "dist_tier": "dist_ext_sa"
+        }
+      ]
+    }
+  }
+}
