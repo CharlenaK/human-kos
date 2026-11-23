@@ -20,9 +20,10 @@
 </p>
 
 <h4 align="center">
-  <a href="#-%E5%BF%AB%E9%80%9F%E5%BC%80%E5%A7%8B">快速开始</a> |
+  <a href="#-%E5%A6%82%E4%BD%95%E9%83%A8%E7%BD%B2%E4%B8%8E%E4%BD%BF%E7%94%A8">部署与使用</a> |
   <a href="#-%E5%8C%85%E5%90%AB%E5%86%85%E5%AE%B9">核心与扩展包</a> |
   <a href="#-%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3">技术文档</a> |
+  <a href="./CONTRIBUTING.md">如何贡献</a> |
   <a href="./LICENSE/">许可与致谢</a> |
   <a href="#-%E8%B7%AF%E7%BA%BF%E5%9B%BE">路线图</a>
 </h4>
@@ -38,8 +39,9 @@
 - 🌟 [核心亮点](#-核心亮点)
 - 🔎 [全景一览](#-全景一览)
 - 📦 [包含内容](#-包含内容)
-- 🚀 [快速开始](#-快速开始)
+- 🚀 [如何部署与使用](#-如何部署与使用)
 - 📚 [技术文档](#-技术文档)
+- 🤝 [如何参与贡献](#-如何参与贡献)
 - ⚖️ [许可协议与致谢](#%EF%B8%8F-许可协议与致谢)
 - 📜 [路线图](#-路线图)
 
@@ -134,29 +136,43 @@ Human KOS 不把所有词条混成一团，而是按人们最自然的五个视�
 
 ---
 
-## 🚀 快速开始
+## 🚀 如何部署与使用
 
-无需部署服务端、Docker 或任何数据库扩展，本地有 Python 3.9+（或任意 SQLite 浏览器）即可直接体验。
+使用 **Human KOS** 就像在电脑上下载一份离线电子书或地图文件一样简单——**不需要配置服务器、不需要安装 Docker、也不需要懂数据库运维**。按你的需要任选下面一种方式即可：
 
-### 1. 下载数据库文件
+### 方式一：配合可视化地图应用一起用（推荐 · 零门槛浏览 2D 知识世界地图）
 
-可直接前往 [**Releases 页面**](https://github.com/CharlenaK/human-kos/releases/latest)手动下载，也可运行仓库自带的一键下载与校验脚本：
+如果你想在浏览器里直观缩放浏览 8.4 万个知识概念，或者把日常 AI 对话挂载到这张地图上：
 
-```bash
-# 仅下载核心图谱（约 238 MB）
-python scripts/download_release.py --core-only
+1. **下载核心图谱文件**：前往 [**GitHub Releases (`v1.0.0`)**](https://github.com/CharlenaK/human-kos/releases/latest)，点击下载 **`human_kos_core.sqlite`**（约 238 MB），存到电脑上任意文件夹里。
+2. **启动配套示例应用**（[**`human-kos-example`**](https://github.com/CharlenaK/human-kos-example)）：
+   ```bash
+   git clone https://github.com/CharlenaK/human-kos-example.git
+   cd human-kos-example/kos_engine
+   uv sync
+   uv run kos-engine --core <你的路径>/human_kos_core.sqlite serve --port 8787
+   ```
+3. **打开浏览器**：访问 `http://127.0.0.1:8787/map`，即可在浅色/深色模式下自由探索 2D 知识地图、用工作台整理对话，也可以按文档零修改源码地接入 **Open WebUI**。
 
-# 下载核心图谱 + 全部 10 个扩展包
-python scripts/download_release.py --all
-```
+### 方式二：只下载数据库文件自己查（适合轻量体验或二次开发）
 
-### 2. 三十秒快速体验
+如果你只是想直接翻看里面的知识词条，或在自己的项目里调用这份图谱：
 
-```bash
-python scripts/quick_demo.py data/human_kos_core.sqlite
-```
+1. **下载文件**：可以直接在 [**Releases 页面**](https://github.com/CharlenaK/human-kos/releases/latest)手工点下载，也可以运行我们自带的一键下载与校验脚本：
+   ```bash
+   # 只下载核心图谱（约 238 MB，推荐起步）
+   python scripts/download_release.py --core-only
 
-只需这两步，你就能在完全离线的本地环境里浏览与检索 8.4 万个相互关联的人类知识概念。
+   # 或者一次性下载核心图谱 + 全部 10 个专业扩展包
+   python scripts/download_release.py --all
+   ```
+2. **三十秒体验检索与漫游**（只需电脑自带的 Python 3.9+，不用额外装任何库）：
+   ```bash
+   python scripts/quick_demo.py data/human_kos_core.sqlite
+   ```
+   你也可以把 `human_kos_core.sqlite` 直接拖进免费的桌面看表工具（如 [DB Browser for SQLite](https://sqlitebrowser.org/)）里像电子表格一样翻阅。
+
+> **如何添加扩展包？** 只要在 `human_kos_core.sqlite` 旁边新建一个叫 `human_kos_ext` 的文件夹，把你下载的扩展包（如 `aat.sqlite`、`unesco.sqlite`）放进去即可，配套应用和示例脚本都会自动识别。
 
 ---
 
@@ -169,6 +185,14 @@ python scripts/quick_demo.py data/human_kos_core.sqlite
 - [**质量与验收报告**](./docs/ACCEPTANCE.md) — 检索延迟实测、跨领域连通率与全项合规检验结果
 - [**离线重建与开发指南**](./docs/BUILD.md) — 如何从上游开放数据集完全离线、确定性地重建全部产物
 - [**文件清单**](./docs/MANIFEST.json) 与 [**SHA-256 校验值**](./docs/SHA256SUMS.txt) — 全量产物哈希与溯源摘要
+
+---
+
+## 🤝 如何参与贡献
+
+非常欢迎你一起完善 Human KOS——无论是纠偏中英文译名、反馈异常关联边、推荐权威开放词表，还是基于本底座开发新的客户端插件与可视化工具！
+
+提交前宜先阅读 [**`CONTRIBUTING.md`**](./CONTRIBUTING.md)，帮助大家共同守住「图谱独立只读」与「开放数据许可隔离」两条底线。
 
 ---
 
@@ -186,7 +210,7 @@ python scripts/quick_demo.py data/human_kos_core.sqlite
 
 - **第一阶段 — 人类知识图谱底座（`v1.0.0`）** ✅ *已完成*
   - 发布中英双语核心图谱（`human_kos_core.sqlite`）、内置二维知识地图坐标与 10 个许可隔离扩展包。
-- **第二阶段 — 智能语义挂载层（`L2`）** 🔜 *规划中*
-  - 将零散对话、笔记与文档自动映射到五大知识维度，提供混合召回与轻量级精准重排。
-- **第三阶段 — 个人知识桥接层（`L3`）** 🔜 *规划中*
-  - 在本地将个人历史对话与知识库投影到 Human KOS 地图上，确保个人隐私数据与公共图谱始终物理隔离。
+- **第二阶段 — 客户端无关适配契约（`L2` 设计）** ✅ *已完成*
+  - 完成六域只读适配器契约定义（五维隔离混合检索、含负边与信息量门禁的多跳沿边遍历、许可边界审计与 R\*Tree/Voronoi 地图视口）。
+- **第三阶段 — 参考示例应用与个人知识桥接（`L2 + L3`）** ✅ *已完成*
+  - 已发布于配套示例仓库 [**`CharlenaK/human-kos-example`**](https://github.com/CharlenaK/human-kos-example)：独立本地引擎（`kos-engine`）、交互式 2D 知识世界地图、本地独立个人账本（`personal_bridge.sqlite`）及 Open WebUI 零改源码接入套件。

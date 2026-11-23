@@ -20,9 +20,10 @@
 </p>
 
 <h4 align="center">
-  <a href="#-quick-start">Quick Start</a> |
+  <a href="#-how-to-use--deploy">How to Use &amp; Deploy</a> |
   <a href="#-whats-included">Core &amp; Extension Packs</a> |
   <a href="#-documentation">Technical Docs</a> |
+  <a href="./CONTRIBUTING.md">Contributing</a> |
   <a href="./LICENSE/">Licenses</a> |
   <a href="#-roadmap">Roadmap</a>
 </h4>
@@ -38,9 +39,10 @@
 - 🌟 [Key Highlights](#-key-highlights)
 - 🔎 [How It Fits Together](#-how-it-fits-together)
 - 📦 [What's Included](#-whats-included)
-- 🚀 [Quick Start](#-quick-start)
+- 🚀 [How to Use &amp; Deploy](#-how-to-use--deploy)
 - 📚 [Documentation](#-documentation)
-- ⚖️ [Licenses & Attribution](#%EF%B8%8F-licenses--attribution)
+- 🤝 [Contributing](#-contributing)
+- ⚖️ [Licenses &amp; Attribution](#%EF%B8%8F-licenses--attribution)
 - 📜 [Roadmap](#-roadmap)
 
 </details>
@@ -134,29 +136,43 @@ All prebuilt database files are published under [**GitHub Releases (`v1.0.0`)**]
 
 ---
 
-## 🚀 Quick Start
+## 🚀 How to Use &amp; Deploy
 
-No servers, Docker containers, or database plugins are required. You only need Python 3.9+ (or any SQLite viewer).
+Using **Human KOS** is as simple as downloading a regular file — **no cloud server, no Docker, and no database administration required**. Choose whichever way fits you best:
 
-### 1. Download the Atlas
+### Option A — Explore Visually with the Companion 2D Map App *(Easiest for Everyone)*
 
-Download files directly from [**Releases**](https://github.com/CharlenaK/human-kos/releases/latest), or use the built-in helper script (which also verifies every file automatically):
+Want to browse all 84,552 concepts on an interactive 2D World Map and connect your AI chats?
 
-```bash
-# Download the Core Atlas (~238 MB)
-python scripts/download_release.py --core-only
+1. **Download the Core Atlas file**: Go to [**GitHub Releases (`v1.0.0`)**](https://github.com/CharlenaK/human-kos/releases/latest) and download **`human_kos_core.sqlite`** (238 MB) into any folder on your computer.
+2. **Start the companion visual app** ([**`human-kos-example`**](https://github.com/CharlenaK/human-kos-example)):
+   ```bash
+   git clone https://github.com/CharlenaK/human-kos-example.git
+   cd human-kos-example/kos_engine
+   uv sync
+   uv run kos-engine --core /path/to/human_kos_core.sqlite serve --port 8787
+   ```
+3. **Open your browser**: Visit `http://127.0.0.1:8787/map`. You can zoom and explore the map, tag conversations across five dimensions, or plug it into **Open WebUI** without changing Open WebUI's code.
 
-# Or download the Core Atlas + all 10 extension packs
-python scripts/download_release.py --all
-```
+### Option B — Open the File Directly on Your Computer *(Zero App Setup)*
 
-### 2. Take a 30-Second Tour
+Just want to look inside the database or use it in your own script?
 
-```bash
-python scripts/quick_demo.py data/human_kos_core.sqlite
-```
+1. **Download the file** from [**Releases**](https://github.com/CharlenaK/human-kos/releases/latest), or run our one-line helper script (which checks file integrity automatically):
+   ```bash
+   # Download only the Core Atlas (~238 MB)
+   python scripts/download_release.py --core-only
 
-That's it — you are exploring 84,552 connected concepts completely offline.
+   # Or download the Core Atlas + all 10 specialty extension packs
+   python scripts/download_release.py --all
+   ```
+2. **Take a 30-second tour** (requires only standard Python 3.9+, zero extra packages):
+   ```bash
+   python scripts/quick_demo.py data/human_kos_core.sqlite
+   ```
+   You can also double-click or drag `human_kos_core.sqlite` into any free desktop viewer such as [DB Browser for SQLite](https://sqlitebrowser.org/).
+
+> **Adding extra packs later:** Simply place any optional `.sqlite` pack (such as `aat.sqlite` or `unesco.sqlite`) into a `human_kos_ext/` folder right next to `human_kos_core.sqlite` — both the companion app and our query examples detect them automatically.
 
 ---
 
@@ -166,18 +182,26 @@ To keep this page easy to scan, all technical specifications, query examples, an
 
 - [**Database Structure Reference**](./docs/SCHEMA.md) — Tables, fields, indexes, and coordinate/vector contracts
 - [**Standalone Query Cookbook**](./docs/QUERIES.md) — Ready-to-run search, multi-hop graph, map viewport, and extension-pack examples
-- [**Quality & Verification Report**](./docs/ACCEPTANCE.md) — Automated benchmark results, latency metrics, and compliance checks
+- [**Quality &amp; Verification Report**](./docs/ACCEPTANCE.md) — Automated benchmark results, latency metrics, and compliance checks
 - [**Offline Build Guide**](./docs/BUILD.md) — How to reproduce the entire atlas offline from upstream open datasets
-- [**Integrity Manifest**](./docs/MANIFEST.json) & [**SHA-256 Checksums**](./docs/SHA256SUMS.txt) — Exact file hashes and provenance summaries
+- [**Integrity Manifest**](./docs/MANIFEST.json) &amp; [**SHA-256 Checksums**](./docs/SHA256SUMS.txt) — Exact file hashes and provenance summaries
 
 ---
 
-## ⚖️ Licenses & Attribution
+## 🤝 Contributing
+
+We welcome contributions of all kinds — better Chinese/English labels, data-quality bug reports, suggestions for authoritative open-access vocabularies, and new companion adapters!
+
+See [**`CONTRIBUTING.md`**](./CONTRIBUTING.md) for guidelines on keeping the Atlas client-agnostic and respecting open-data license boundaries.
+
+---
+
+## ⚖️ Licenses &amp; Attribution
 
 All licensing documents, full upstream legal texts, and required credit notices are collected in the dedicated **[`LICENSE/`](./LICENSE/)** folder:
 
-- **Repository code, scripts & docs**: [MIT License](./LICENSE/MIT.txt)
-- **Data license matrix & isolation guide**: [`LICENSE/README.md`](./LICENSE/README.md)
+- **Repository code, scripts &amp; docs**: [MIT License](./LICENSE/MIT.txt)
+- **Data license matrix &amp; isolation guide**: [`LICENSE/README.md`](./LICENSE/README.md)
 - **Full upstream attribution list**: [`LICENSE/NOTICE.md`](./LICENSE/NOTICE.md)
 
 ---
@@ -186,7 +210,7 @@ All licensing documents, full upstream legal texts, and required credit notices 
 
 - **Phase 1 — Knowledge Atlas Base (`v1.0.0`)** ✅ *Completed*
   - Core bilingual knowledge atlas (`human_kos_core.sqlite`), 2D map coordinates, and 10 license-isolated extension packs.
-- **Phase 2 — Smart Matching Layer (`L2`)** 🔜 *Planned*
-  - Turn raw conversations, notes, and documents into clean multi-dimensional knowledge tags with hybrid recall and lightweight reranking.
-- **Phase 3 — Personal Knowledge Bridge (`L3`)** 🔜 *Planned*
-  - Connect your own private chat history and notes onto the Human KOS map locally — keeping personal data 100% separate from the shared atlas.
+- **Phase 2 — Client-Agnostic Adapter Contract (`L2` Design)** ✅ *Completed*
+  - Defined the six-domain read-only Adapter Contract (isolated 5-facet hybrid search, multi-hop traversal with negative-edge &amp; IC guards, provenance checks, and R\*Tree/Voronoi viewport).
+- **Phase 3 — Reference Example App &amp; Personal Bridge (`L2 + L3`)** ✅ *Completed*
+  - Published in companion repository [**`CharlenaK/human-kos-example`**](https://github.com/CharlenaK/human-kos-example): standalone local engine (`kos-engine`), interactive 2D Knowledge World Map, private local ledger (`personal_bridge.sqlite`), and zero-fork Open WebUI integration kit.
